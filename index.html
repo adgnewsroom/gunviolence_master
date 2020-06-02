@@ -1,0 +1,1904 @@
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <style>
+
+body {
+ background-color:#cccccc;
+ overflow-x:hidden;
+ overflow-y:scroll;
+}
+
+html {
+  height: 100%;
+}
+
+.container1 {
+padding-top: 5vh;
+}
+
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  min-width: 100px;
+  padding: 4px 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  color: #444; /* rgba not supported (IE 8) */
+  color: rgba(0, 0, 0, 0.80); /* rgba supported */
+  border: 1px solid #999;  /*IE 6/7/8*/
+   /*IE9 + everything else*/
+  background-color: white;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.button.active {
+  background: #383838;
+  color: #fff;
+}
+
+#bubble svg{
+  /* max-width: 500px; */
+  height: 300px;
+  margin: auto;
+  width: 100%;
+  /* padding-top: 5vh; */
+  /* margin-bottom: 10px; */
+}
+
+
+#chart svg{
+  /* max-width: 500px; */
+  /* height: 300px; */
+  margin: auto;
+  height: 90%;
+  /* padding-top: 5vh; */
+  /* margin-bottom: 10px; */
+}
+
+
+  #toolbar {
+    margin: auto;
+    width: 280px;
+  }
+
+
+  .list-group-item {
+    background-color: #E8B1B1;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .list-group {
+    margin: auto;
+    width: 525px;
+    padding-bottom: 5vh;
+  }
+
+
+    .year {
+      font-size: 18px;
+      fill: black;
+      padding: 3px;
+      background-color: black;
+      border-radius: 5px;
+      cursor: default;
+    }
+
+    .age_range {
+      font-size: 18px;
+      border-radius: 5px;
+      padding: 3px;
+      fill: black;
+      cursor: default;
+    }
+
+    /* .manner {
+      background-color: black;
+      border-radius: 5px;
+      padding: 3px;
+      font-size: 18px;
+      fill: #636363;
+      cursor: default;
+    } */
+
+    hr.divider {
+    margin: 0.3em;
+    border-width: 0.8px;
+  }
+
+  .tooltip {
+  	position: absolute;
+  	top: 100px;
+  	left: 100px;
+    -moz-border-radius:5px;
+  	border-radius: 4px;
+    border: 1px solid #2F4F4F;
+    background: Azure;
+  	opacity: 0.8;
+    /* color: black; */
+  	padding: 8px;
+  	max-width: 190px;
+  	/* font-size: 12px; */
+  	z-index: 10;
+  }
+
+  .tooltip .title {
+  	font-size: 13px;
+  }
+
+  .tooltip .category {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .tooltip .name {
+    font-size: 19px;
+    line-height: 35px;
+    font-family: 'Gelasio', serif;
+    background-color: black;
+    padding: 1px 4px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+  }
+
+  .tooltip .dob {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .tooltip .value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+
+.wrapper {
+  overflow-x:hidden;
+}
+
+.background {
+  background-image: linear-gradient(to bottom, transparent, 80%, black),
+                    url("landing_page_original.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.foreground {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  flex-direction: column;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88.5vh;
+}
+
+h1 {
+  font-size: 4em;
+  font-family: 'Gelasio', serif;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  display: block;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8em;
+
+}
+
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6em;
+  color: white;
+  text-align: left;
+  max-width: 80vw;
+}
+
+h4 {
+  /* color: #d1d1d1; */
+  font-size: 1.8em;
+  /* text-shadow: 1px 1px 1px #000; */
+
+  /* -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: white; */
+  text-align: center;
+  padding-top: 30px
+}
+
+h5 {
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+  padding-top: 30px
+}
+
+h7 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+  color: black;
+  font-weight: 700;
+}
+
+p {
+  max-width: 730px;
+  margin: auto;
+  padding: 0 15px;
+  margin-bottom: 1em;
+  font-family: 'Gelasio', serif;
+  font-size: 1.3em;
+}
+
+.captions p{
+  max-width: 730px;
+  margin: auto;
+  padding: 0 15px;
+  margin-bottom: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  padding-bottom: 4vh;
+}
+
+.dropcap:first-of-type p:first-of-type:first-letter {
+    float: left;
+    font-size: 65px;
+    line-height: 1;
+    font-weight: bold;
+    margin-right: 9px;
+}
+
+#topper{
+  background-color: black
+}
+
+.intro {
+  /* background: black; */
+background: -webkit-gradient(linear, 100% 100%, 100% 100%, from(black), 80%, to(transparent));
+background: -webkit-linear-gradient(top, black, transparent);
+background: -moz-linear-gradient(top, black, transparent);
+background: -ms-linear-gradient(top, black, transparent);
+background: -o-linear-gradient(top, black, transparent);
+background: linear-gradient(top, black, 80%, transparent);
+/* background: linear-gradient(black, 80%, transparent) no-repeat; */
+}
+
+
+.subintro p{
+color: White
+}
+
+#vis {
+  align-items: center;
+  justify-content: center;
+  display: block;
+  padding-top: 2vh;
+  padding-left: 15vw;
+}
+
+
+#bubble {
+  align-items: center;
+  justify-content: center;
+  display: block;
+  padding-top: 1vh;
+  padding-left: 38vw;
+}
+
+
+#chart {
+  /* padding-bottom: 1vh; */
+  padding-left: 3vw;
+  /* max-height: 90%; */
+}
+
+#share {
+  display: inline-block;
+  position: absolute;
+  top: 5;
+  right: 1;
+  width: 80px;
+  z-index: 150;
+}
+
+/* buttons */
+
+#share a {
+  display: inline-block;
+  margin: 5px;
+  opacity: 0.7;
+}
+
+#share a:hover {
+  opacity: 1;
+}
+
+#share img {
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.col-md-6 a:hover {
+  opacity: 1;
+}
+
+.col-md-6 a {
+  opacity: 0.7;
+}
+
+
+#logo {
+  display: inline-block;
+  float: left;
+  position: relative;
+  flex: 0 0 700px;
+  position:relative;
+  left:51%;
+  transform:translate(-30%, 50%);
+  z-index: 100;
+    }
+
+#logo img {
+  display: inline-block;
+  float: left;
+  position: relative;
+  width: 55%;
+  z-index: 100;
+    }
+
+#logo a{
+  opacity: 1;
+}
+
+#logo a:hover {
+  opacity: 0.7;
+}
+
+.states {
+  stroke: #fff;
+  stroke-width:1px;
+}
+
+.states:hover{
+  opacity: .6;
+}
+
+.legendLinear text {
+    font-size: 12px;
+}
+
+.d3-tip {
+  line-height: 1;
+  padding: 12px;
+  background: Azure;
+  border: 1px solid #2F4F4F;
+  opacity: 0.8;
+  border-radius: 2px;
+}
+
+.scroll {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -650%);
+  top: 0;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+}
+
+.chevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: white;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text {
+  display: block;
+  padding-top: 65px;
+  margin-top: 65px;
+  margin-left: -30px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: .25;
+  animation: pulse 2s linear alternate infinite;
+}
+
+.img-fluid {
+  max-width: 45vw;
+  padding: 20px;
+}
+
+.img-fluid1 {
+  max-width: 25vw;
+  padding: 10px;
+}
+
+.subhead {
+  line-height: 0.5;
+  text-align: center;
+  padding-bottom: 8vh;
+}
+.subhead span {
+  display: inline-block;
+  position: relative;
+}
+.subhead span:before,
+.subhead span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  top: 0;
+  width: 150px;
+}
+.subhead span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.subhead span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.carousel-cell{
+  width: 80vw;
+  overflow: hidden;
+  padding-right:100px;
+}
+
+.slideshow img {
+  width: 100%;
+}
+
+.slideshow {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media (min-width: 1980px) {
+
+#bubble {
+  padding-left: 40%;
+}
+}
+
+
+@media screen and (max-width: 1980px) and (min-width: 992px) {
+  #bubble {
+    padding-left: 30%;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .subhead span:before,
+  .subhead span:after {
+    width: 140px;
+  }
+
+  .list-group {
+    width: 465px;
+  }
+
+#vis {height: 50%;}
+
+#chart {height: 50%;}
+
+#bubble {
+  padding-left: 8%;
+}
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 3em;
+    font-family: 'Gelasio', serif;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  p {
+    font-size: 1.1em;
+    width:400px;
+  }
+
+  #logo img {
+    width: 50%
+  }
+
+#share {
+  width: 70px;
+}
+
+#share img {
+  width: 30px;
+  height: auto
+  }
+
+.chevron {
+  width: 20px;
+  height: 5px;
+  }
+
+.text {
+  font-size: 10px
+  }
+
+#chart .tooltiptext{
+  font-size: 5px
+}
+
+.subhead span:before,
+.subhead span:after {
+  width: 90px;
+}
+
+h4 {
+  font-size: 1.0em;
+}
+
+h2 {
+  font-size: 1.1em;
+}
+
+h5 {
+  font-size: 1.0em;
+}
+
+#share img {
+  width: 18px;
+  height: 18px;
+}
+
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 2em;
+    font-family: 'Gelasio', serif;
+    text-align: center;
+  }
+
+  .list-group {
+    margin: auto;
+    width: 415px;
+    padding-bottom: 5vh;
+  }
+
+#bubble {
+  padding-left: 0
+}
+
+  h7 {
+    font-size: 1.0em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+
+p {
+  font-size: 1.0em;
+  width:380px;
+  }
+
+  .subhead span:before,
+  .subhead span:after {
+    width: 70px;
+  }
+
+  h4 {
+    font-size: 0.9em;
+  }
+
+  h5 {
+    font-size: 0.8em;
+  }
+
+}
+
+
+  </style>
+  </head>
+  <body>
+<div class="wrapper">
+    <section id="topper">
+      <div id="logo"><a href="http://www.arkansasonline.com" target="_blank"><img alt="Arkansas Democrat-Gazette" src="https://s3.amazonaws.com/new_videos/year_in_pictures/logo.png" class="center"></a></div>
+
+
+      <div id="share">
+        <a target="_blank" class="twitter" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=https://www.arkansasonline.com/yearinreview/&text=Explore the best stories from the Arkansas Democrat-Gazette newsroom in 2019."><img
+            src="twitter.png" alt="2"></a>
+        <a target="_blank" class="facebook" title="Share on Facebook" href="https://www.facebook.com/share.php?u=https://www.arkansasonline.com/yearinreview/&title=Explore the best stories from the Arkansas Democrat-Gazette newsroom in 2019."><img
+            src="facebook.png"></a>
+      </div>
+      <div class="background"></div>
+      <div class="foreground">
+          <div id="titlecard">
+          <h1>Children in Peril</h1>
+        </div>
+            <h3>Arkansas ranks in the top 10 states with the most children who die by gunfire.</h3>
+            <h5>By Ginny Monk and Yutao Chen</h5>
+      </div>
+
+    <div class="scroll">
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <span class="text">Scroll down</span>
+    </div>
+  </section>
+
+
+<div class="spacer" style="padding: 8vh; background: black"></div>
+<div class="intro">
+  <div class="subintro">
+<article data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="800">
+  <div class="dropcap">
+    <p>Fingers clumsy from sleep, Delana Aguire accidentally answered the 2 a.m. call. She softly said hello to avoid waking the two children next to her.</p>
+  </div>
+
+    <p>The caller whispered something Aguire couldn’t quite understand, then hung up.</p>
+
+    <p>A barrage of bullets barrelled through the bedroom. Three hit Aguire.</p>
+
+    <p>Certain the shots were meant for her, Aguire jumped up and stumbled into the hallway, desperate to keep the slugs away from Tacari, 18 months, and Noah, 4.</p>
+
+    <p>Aguire was airlifted from Newport to a hospital in Little Rock. Emergency responders called one for Tacari, too, but it was too late for the toddler, who was pronounced dead soon after the February 2013 shooting.</p>
+
+    <p>Tacari became one of the youngest victims of gun violence in Arkansas from 2012 to 2017, according to a data analysis by the Arkansas Democrat-Gazette.</p>
+
+    <p>This story is one of an occasional series about what that data show regarding deaths of children in Arkansas. Other articles will examine suicide, suffocation and other unnatural, often preventable causes of child fatalities.</p>
+
+    <p>The newspaper examined the circumstances surrounding the deaths of nearly 1,500 children from 2012 to 2017 and found 81 died of gunshots.</p>
+
+
+
+
+    <div class="container1">
+
+      <h4 style="color: #e6e6e6; text-shadow: 2px 2px 8px #000000;">Arkansas children died from gunshots from 2012 to 2017 <br>(DATA NEEDS UPDATING)</h4>
+      <div id="toolbar">
+        <a id="all" class="button active">All deaths</a>
+        <!-- <a id="manner" class="button">By manner</a> -->
+        <a id="year" class="button">By year</a>
+        <a id="age_range" class="button">By age</a>
+
+        <svg class="legend" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 viewBox="0 0 50 33" style="enable-background:new 0 0 50 33; width: 70px; transform: translate(300px, -20px);" xml:space="preserve">
+        <style type="text/css">
+        	.st0{fill:#262626;}
+        	.st1{fill:white;}
+        	.st2{font-family:'ArialMT';}
+        	.st3{font-size:10px;}
+        </style>
+        <g>
+        	<rect x="4" y="5" class="st0" width="9" height="9"/>
+        </g>
+        <g>
+        	<rect x="4" y="19" class="st1" width="9" height="9"/>
+        </g>
+        <text transform="matrix(1 0 0 1 15.9678 12.7139)" class="st2 st3">Male</text>
+        <text transform="matrix(1 0 0 1 15.9678 27.7139)" class="st2 st3">Female</text>
+        </svg>
+      </div>
+      <div id="bubble"></div>
+    </div>
+
+    <div class="captions"><p>*Victims' names are withheld.</p></div>
+
+    <div class="spacer" style="padding: 2vh"></div>
+
+    <p>During the same period, however, federal mortality data showed 140 Arkansas children died from gunshots. The discrepancy can be explained by the failure or inability of some coroners and prosecutors to provide the Democrat-Gazette with requested records and differences in the way data are reported to the Centers for Disease Control and Prevention.</p>
+
+    <p>Arkansas ranked ninth in the nation for the rate of children who die by gunfire: 3 per 100,000, averaged from federal data for 1999-2018. Washington, D.C., had the highest rate, at 8.8. per 100,000.</p>
+</div>
+    <div class="spacer" style="padding: 2vh"></div>
+
+
+<h4 style="color: #e6e6e6; text-shadow: 2px 2px 8px #000000;">Children died from gunshots from 2012 to 2017 <br>(DATA NEEDS UPDATING)</h4>
+
+    <div id="vis"></div>
+
+    <div class="captions"><p>Source: <a href="https://www.cdc.gov/" target="_blank" class="badge badge-secondary">Centers for Disease Control and Prevention</p></a></div>
+
+    <div class="spacer" style="padding: 2vh"></div>
+
+  </div>
+    <p>The CDC’s 2018 death statistics, which were published after the newspaper began its data analysis, show that 23 children died from gunfire in Arkansas that year.</p>
+
+    <p>The ages of children in cases examined by the newspaper ranged from a 3-month-old girl whose father accidentally shot her in the head while she was in her car seat to a boy nearing his 18th birthday who killed himself.</p>
+
+    <p>Teenage boys constituted the largest group of those who died of gunshots, the newspaper’s data show.</p>
+
+    <p>Curbing the rate of child deaths from guns poses challenges for health professionals and others who seek to prevent gun violence. Education is key, and steps such as gun locks and gun safes can work, experts say.</p>
+
+    <p>But even when provided with gun locks, many parents won’t use them, according to research from nonprofits and interviews with local gun-violence-prevention advocates.</p>
+
+    <p>Arkansas Children’s Hospital is one of several groups working to decrease gun deaths and injury of children through education efforts, research and providing access to preventative tools such as gun locks.</p>
+
+    <p>“Everyone wants lower rates of gun violence,” said Jessica Scott, the chapter leader for Moms Demand Gun Action in America, a national advocacy group.</p>
+
+    <div class="spacer" style="padding: 4vh"></div>
+
+
+    <!-- <h4>Suicides by minors, per 100,000 from 1999 to 2018</h4>
+
+    <div class="captions"><p><br>Source: <a href="https://www.cdc.gov/" target="_blank" class="badge badge-secondary">Centers for Disease Control and Prevention</p></a></div>
+
+    <div id="chart"></div> -->
+
+
+
+</article>
+    <div class="spacer" style="padding: 3vh"></div>
+
+<article>
+
+    <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"Kids are put in danger"</span></h2>
+
+    <div class="dropcap">
+    <p>Tacari was one of at least five children in the newspaper’s analysis who died in a shooting related to domestic violence.</p>
+</div>
+
+    <p>Aguire was living with her mother in Newport when she and Tacari were shot.</p>
+
+    <p>In the early-morning chaos, one bullet darted through Aguire’s arm, another lodged in her buttock and a third ripped into the flesh on the back of her neck.</p>
+
+    <p>“Mama, he shot me!,” she called out as she fell into the hallway, where she lay bleeding until first responders arrived.</p>
+
+    <p>Robert Friar, Aguire’s ex-boyfriend, had been verbally and physically abusive, she said. His friends followed her to and from the grocery store. She was afraid of him.</p>
+
+    <p>That night, Feb. 13, 2013, he’d told her to ride to Jonesboro with him. She’d told him she would after she put her kids to bed. Her mother helped her take care of the kids — two boys and Tacari.</p>
+
+    <p>Aguire had used that line before, saying she’d meet Friar somewhere, then saying she’d fallen asleep when he confronted her about missing their date.</p>
+
+    <p>“Mama, check on my babies,” she yelled from the hallway.</p>
+
+    <div class="slideshow">
+        <div class='carousel'>
+            <div class='carousel-cell'><img src="scene_1.jpg"></div>
+            <div class='carousel-cell'><img src="scene_2.jpg"></div>
+            <div class='carousel-cell'><img src="scene_3.jpg"></div>
+            <div class='carousel-cell'><img src="scene_4.jpg"></div>
+            <div class='carousel-cell'><img src="scene_5.jpg"></div>
+
+        </div>
+    </div>
+
+    <p>Her mother, Leslie Curl, called 911 and ran into the bedroom.</p>
+
+    <p>Curl had chosen the name Tacari; she’d noticed the word in a magazine (she thinks it was a kind of wine) and thought it was pretty — perfect for the long-awaited daughter in the family.</p>
+
+    <p>Tacari liked to play with her brothers, laughed easily and when she threw temper tantrums, she would fall 0n the floor in a way that frightened her caretakers.</p>
+
+    <div class="spacer" style="padding: 4vh"></div>
+
+    <div class="d-flex justify-content-center">
+    <img src="tacari_1.jpg" class="img-fluid1" alt="Responsive image">
+    <img src="tacari_2.jpg" class="img-fluid1" alt="Responsive image">
+  </div>
+
+  <div class="spacer" style="padding: 4vh"></div>
+
+    <p>Their reactions were another in a litany of things that made her laugh.</p>
+
+    <p>The kids were quiet, and Aguire thought maybe they were both dead. Then she heard screaming and sobs.</p>
+
+    <p>“Mama, what’s going on?,” she cried over and over, desperate for answers.</p>
+
+    <p>After the shooting, Aguire sank into a deep depression.</p>
+
+    <p>“I didn’t even have the strength to do anything,” Aguire said. “I saw the light in my sons’ eyes disappear.</p>
+
+    <p>“If I can change one young lady’s life with my story, I will.”</p>
+
+    <p>Aguire says she’s considered writing a book about her experiences with domestic violence. She and her mother say they don’t like guns and have trouble leaving the house. They haven’t worked since Tacari died.</p>
+
+    <p>About 1 in 4 women and 1 in 10 men have experienced sexual violence, physical violence and/or stalking by an intimate partner during their lifetimes, according to the CDC.</p>
+
+    <p>About 16% of homicide victims are killed by an intimate partner, and nearly half of female homicide victims in the United States are killed by a current or former male partner, the CDC says.</p>
+
+    <p>“Domestic violence doesn’t just affect grown-ups,” Scott said. “Kids are put in danger by these things as well.”</p>
+
+    <p>Federal law bars anyone previously convicted of a domestic-violence crime from owning a gun. Thirty states and Washington, D.C. have a similar or matching law. Arkansas has no such law.</p>
+
+    <p>Aguire said she reported Friar’s abuse to the police repeatedly, but never went through with pressing charges. She said she didn’t feel like officers took her seriously, that they thought she was just going to go back.</p>
+
+    <p>“I wish I would have listened to my mama about him,” Aguire said. “But by then I couldn’t get out.”</p>
+
+    <p>Friar was sentenced to life in prison without parole for one count of capital murder, one count of attempted capital murder and committing a terroristic act. The Arkansas Supreme Court affirmed the sentence in October 2018.</p>
+
+
+</article>
+
+    <div class="spacer" style="padding: 10vh"></div>
+
+<article>
+
+    <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>Second-most common</span></h2>
+
+    <div class="dropcap">
+
+    <p>Tacari was among 25 children whose deaths by gunfire coroners ruled as homicides, the newspaper’s review of available records showed. Homicides were the second-most common means of death after suicide.</p>
+
+</div>
+
+    <p>Adults committed most of those homicides, although three were by other children. One was by Little Rock police officer Josh Hastings, who shot a black teenager who was allegedly breaking into a car.</p>
+
+    <p>The advocacy group Moms Demand Gun Action also recommends requiring background checks on all gun purchases. Arkansas law allows private sellers to skip background checks. Fourteen states and Washington, D.C., have some kind of universal background check law.</p>
+
+    <p>In the 2019 legislative session, Sen. Greg Leding, a Democrat from Fayetteville, proposed a bill that would allow a judge to order a person’s guns taken away if that person is deemed a threat to themselves or others. The bill, which had Moms Demand’s support, failed in committee and was referred to study.</p>
+
+    <p>Seventeen states and Washington, D.C. have such laws, known as red flag or extreme risk protection order laws.</p>
+
+    <p>Opponents in Arkansas have said such legislation infringes on due process and 2nd Amendment rights.</p>
+
+    <p>Leding has said he plans to bring the bill up again.</p>
+
+    <p>In 2018, Arkansas had the 8th-highest rate of firearm fatalities of any state at 18.9 per 100,000, according to the CDC.</p>
+
+    <p>“I think a lot of it is just the number of guns,” Scott said of Arkansas’ gun-death ranking. “We are a state with a long hunting tradition.”</p>
+
+  </article>
+
+  <div class="spacer" style="padding: 10vh"></div>
+
+
+  <article>
+
+  <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"In that second"</span></h2>
+
+  <div class="dropcap">
+
+  <p>About four years after Tacari’s death, 7-year-old Karma Wezowicz was shot in the head at her home in Beebe on Feb. 27.</p>
+
+</div>
+
+  <p>Chad Jeremiah Owens, an acquaintance of Karma’s father Matthew Wezowicz, had stopped by their house and wanted to see Matthew’s new handgun.</p>
+
+  <p>While Owens was holding the weapon, the gun went off and a bullet hit Karma. She died a few days later.</p>
+
+  <p>Matthew and Karma were close. The two were laughing together over a video game in the moments before she was shot.</p>
+
+  <p>“In that second, there’s a hole in her forehead and her smile’s gone and I’m catching her,” Matthew said.</p>
+
+  <div class="spacer" style="padding: 4vh"></div>
+
+  <div class="d-flex justify-content-center">
+  <img src="karma_1.jpg" class="img-fluid" alt="Responsive image">
+</div>
+<div class="d-flex justify-content-center">
+
+<img src="karma_2.jpg" class="img-fluid" alt="Responsive image">
+</div>
+
+<div class="spacer" style="padding: 4vh"></div>
+
+  <p>Owens was sentenced to five years in prison — three years longer than the presumptive sentence for manslaughter — by Judge Robert Edwards of the 17th Judicial Circuit in August 2017. Owens had taken Valium and drunk two beers before he went over to the Wezowicz house that night, court testimony showed.</p>
+
+  <p>Matthew thinks the sentence should have been longer. A mandatory 10-year sentence for people who accidentally kill anyone under the age of 12 would be a powerful deterrant, he said, and make people think twice before handling a weapon in a house with a child.</p>
+
+  <p>“She happened to be in the line of his mistake,” he said of the night Karma was shot.</p>
+
+  <p>Mom’s Demand Gun Action advocates for so-called “safe storage” policy that would require parents and guardians to keep their weapons in safes or use trigger or cable locks, away from children. Eleven states have some kind of safe storage law.</p>
+
+  <p>A safe storage law is one Matthew says he could get on board with. He doesn’t believe in “gun control,” and still keeps guns in the apartment, but says they’re always unloaded or locked up. Sometimes, it’s both, although he keeps one locked away but loaded for protection, he said.</p>
+
+  <p>The foundation will soon push out a training for the workplace environment that can be accomplished over a lunch hour and a training tailored toward caretakers.</p>
+
+  <p>“I was one of those overprotective dads, I know I was,” he said.</p>
+
+  <div class="spacer" style="padding: 4vh"></div>
+
+  <div class="d-flex justify-content-center">
+  <img src="karma_3.jpg" class="img-fluid1" alt="Responsive image">
+  <img src="karma_4.jpg" class="img-fluid1" alt="Responsive image">
+</div>
+
+<div class="spacer" style="padding: 4vh"></div>
+
+  <p>In the years after Karma’s death, he’s moved, found a new job, started dating someone. She has an elementary-school-aged son.</p>
+
+  <p>Despite the passage of time and life changes, he said not a day goes by where he doesn’t think of his daughter.</p>
+
+  <p>“It doesn’t get easier,” he said. “You don’t move on, you learn to move forward with the pain.”</p>
+
+
+</article>
+
+<div class="spacer" style="padding: 10vh"></div>
+
+
+<article>
+
+<h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"Loaded and easily accessible"</span></h2>
+
+<div class="dropcap">
+
+<p>While adults have been prosecuted for accidentally shooting children, few instances of children accidentally shooting themselves have resulted in criminal prosecutions of the adults who owned the guns.</p>
+
+</div>
+
+<p>Among the cases reviewed by the Democrat-Gazette in which children fatally shot themselves by accident, four resulted in criminal prosecutions: one for negligent homicide and three for manslaughter; two had additional charges of endangering a minor.</p>
+
+<p>In the case of Eron Jones, a 6-year-old who found a gun when he was left alone in a car and shot himself in the eye, his aunt was prosecuted and received a one-year suspended sentence, provided she get therapy.</p>
+
+<p>But in the case of Cayden Thompson, a 1-year-old who was playing with a rifle and accidentally shot himself in the face, no charges were filed.</p>
+
+<p>Members of Moms Demand Gun Action attend educational events during which they hand out gun locks. Scott said the locks are usually well-received.</p>
+
+<p>But Hope Mullins, an injury prevention specialist at Arkansas Children’s Hospital, said the hospital conducted a focus-group study last year in which parents were given gun locks. Researchers checked in with participants a year after and found that almost none of them were using the locks.</p>
+
+<p>“They wanted one handgun loaded and easily accessible,” Mullins said.</p>
+
+<p>Parents also rejected guns with triggers that require a fingerprint to fire because they wanted their children to have access to the weapons in case of break-ins, she said.</p>
+
+<p>Congress froze funding for gun violence research in 1996, but late last year, voted to provide $12.5 million each to the CDC and the National Institutes of Health for such research.</p>
+
+<p>Researchers at Arkansas Children’s are going to collaborate with researchers in Tennessee and Alabama, which also are largely rural.</p>
+
+<p>“We’re in the infancy,” Mullins said of the research. “We don’t know what’s going to work.”</p>
+
+<p>Mullins and Scott both said they want to normalize the practice of asking about weapons in the home before children visit.</p>
+
+<p>Scott said she always asks about guns in the home before her daughter has play dates.</p>
+
+<p>“We ask about food allergies, we ask about other things, but we don’t ask about guns,” she said.</p>
+
+
+</article>
+
+  <div class="spacer" style="padding: 10vh"></div>
+
+  <article>
+
+  <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"Guns are fatal"</span></h2>
+
+  <div class="dropcap">
+
+  <p>Just over half the cases of suicide examined by the newspaper were by guns. Of 64 suicides, 34 were by gunshots. Suicide was also the most common way for a child to die by gunfire.</p>
+
+  </div>
+
+  <p>“A lot of that has to do with access,” Scott said. ” … Guns are fatal the majority of the time.”</p>
+
+  <p>In the case of Eron Jones, a 6-year-old who found a gun when he was left alone in a car and shot himself in the eye, his aunt was prosecuted and received a one-year suspended sentence, provided she get therapy.</p>
+
+  <p>Guns are among the most lethal methods of suicide. Most firearms used in suicides of minors belong to the kids’ parents, according to research from the Means Matter Campaign at Harvard University.</p>
+
+  <p>Securing guns and storing them separately from ammunition are among recommendations Arkansas Children’s health professionals make to parents of children who are discharging from the hospital after a suicide attempt, Mullins said.</p>
+
+  <p>Ladeana Bell, a licensed therapist and volunteer with the Arkansas chapter of the American Foundation for Suicide Prevention, said she makes the same recommendation to parents when she’s treating their children for suicidal ideations or depression.</p>
+
+  <p>But, Bell added, she thinks more parents should know to talk to their kids about suicide so they are aware what is going on with the children.</p>
+
+  <p>“We need to talk to teens,” she said. ” … We need people to really understand that it’s [suicide] not ever caused by one thing.”</p>
+
+  <p>Anyone experiencing suicidal thoughts can call the National Suicide Prevention Hotline at (800) 273-8255 or the Arkansas Crisis Hotline at (888) 274-7472.</p>
+
+</article>
+
+  <div class="spacer" style="padding: 10vh"></div>
+
+  <!-- Footer -->
+<footer class="page-footer font-small unique-color-dark" style="background-color: #383838">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <!-- <h6 class="text-uppercase font-weight-bold">Company name</h6> -->
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <a href="http://www.arkansasonline.com" target="_blank"><img alt="Arkansas Democrat-Gazette" src="https://s3.amazonaws.com/new_videos/year_in_pictures/logo.png" class="center" style="width: 100%"></a>
+        <div class="col-md-6 col-lg-9 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic"><a href="https://www.facebook.com/arkansasonline/" target="_blank">
+<img src="facebook.png" style="width:20px"></a>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic"><a href="https://twitter.com/arkansasonline" target="_blank">
+<img src="twitter.png" style="width: 20px;"></a>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic"><a href="https://instagram.com/arkansasonline" target="_blank">
+<img src="instagram.png" style="width: 20px;"></a>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic"><a href="https://www.linkedin.com/company/arkansas-democrat-gazette" target="_blank">
+<img src="linkedin.png" style="width: 20px;"></a>
+          </a>
+
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="padding-top:20px">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold" style="color: white">About</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; color: white;   border-bottom: 1px solid White;"><br>
+        <small>
+          <a href="https://www.arkansasonline.com/tools/termsofuse/" style="color: white">Terms of Use</a><br>
+        </small>
+        <small>
+          <a href="http://adv.arkansasonline.com/" style="color: white">Advertising</a><br>
+        </small>
+        <small>
+          <a href="https://www.jobsarkansas.com/Jobs/-quat-arkansas%20democrat-gazette-quat-?source=5&countryId=3" style="color: white">Careers</a><br>
+        </small>
+        <small>
+          <a href="https://www.arkansasonline.com/tools/privacystatement/" style="color: white">Privacy Statement</a>
+        </small>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="padding-top:20px">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold" style="color: white">Newsroom</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; color: white;   border-bottom: 1px solid White;"><br>
+        <small>
+          <a href="https://www.arkansasonline.com/corevalues/" style="color: white">Core Values</a><br>
+        </small>
+        <small>
+          <a href="https://www.arkansasonline.com/contacts/newstips/" style="color: white">News Tips</a><br>
+        </small>
+        <small>
+          <a href="https://www.arkansasonline.com/emails/subscribe/" style="color: white">Newsletters</a><br>
+        </small>
+        <small>
+          <a href="https://digital.olivesoftware.com/Olive/ODN/ArDemocrat/" style="color: white">Today's Paper</a>
+        </small>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="padding-top:20px">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold" style="color: white">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; color: white;   border-bottom: 1px solid White;"><br>
+        <small>
+          <a href="https://www.arkansasonline.com/digital/faq/" style="color: white">Digital Replica FAQ</a><br>
+        </small>
+        <small>
+          <a href="https://www.arkansasonline.com/settings/" style="color: white">Subscriber Help</a><br>
+        </small>
+        <small>
+          <a href="https://www.arkansasonline.com/contact/voicesform/" style="color: white">Letters to the Editor</a><br>
+        </small>
+        <small>
+          <a href="https://www.arkansasonline.com/staff/" style="color: white">Newspaper Staff</a>
+        </small>
+
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-4" style="color: white; font-size: 14px;">Copyright © 2020, Arkansas Democrat-Gazette, Inc.
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+</div>
+<!-- Footer -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="//d3js.org/queue.v1.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <!-- <script src="d3-legend.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="map.js"></script>
+    <script src="linechart.js"></script>
+    <!-- <script src="bubble.js"></script> -->
+
+
+    <script>
+    var flky = new Flickity( '.carousel', {});
+
+    AOS.init();
+
+    AOS.refresh();
+
+
+    var titleCard = "#titlecard";
+    //The effect that will be applied to your page element. See https://daneden.github.io/animate.css/ for full list.
+    var yourEffect = "fadeInUp";
+    var effectClass = "animated " + yourEffect;
+    jQuery( document ).ready(function() {
+      jQuery(titleCard).show().addClass(effectClass).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        jQuery(this).removeClass();
+      });
+    });
+
+
+    // $(function() {
+    //
+    //     var documentEl = $(document),
+    //         fadeElem = $('#topper');
+    //
+    //     documentEl.on('scroll', function() {
+    //         var currScrollPos = documentEl.scrollTop();
+    //
+    //
+    //         fadeElem.each(function() {
+    //             var $this = $(this),
+    //                 elemOffsetTop = $this.offset().top;
+    //             if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/800);
+    //         });
+    //     });
+    // });
+
+
+
+
+
+
+    /* bubbleChart creation function. Returns a function that will
+     * instantiate a new bubble chart given a DOM element to display
+     * it in and a dataset to visualize.
+     *
+     * Organization and style inspired by:
+     * https://bost.ocks.org/mike/chart/
+     *
+     */
+    function bubbleChart() {
+      // Constants for sizing
+      var width = 500;
+      var height = 400;
+
+      // tooltip for mouseover functionality
+      var tooltip1 = floatingTooltip('tooltip', 240);
+
+
+      var ageCenters = {
+        low: { x: 130, y: 150 },
+        medium: { x: 260, y: 150 },
+        high: { x: 360, y: 150 }
+      };
+
+      // X locations of the year titles.
+      var agesTitleX = {
+        "0-5": 100,
+        "6-11": 230,
+        "12-18": 360,
+      };
+
+
+      // Locations to move bubbles towards, depending
+      // on which view mode is selected.
+      var center = { x: 250, y: 150 };
+
+      var yearCenters = {
+        2012: { x: 70, y: 150 },
+        2013: { x: 140, y: 150 },
+        2014: { x: 210, y: 150 },
+        2015: { x: 280, y: 150 },
+        2016: { x: 350, y: 150 },
+        2017: { x: 420, y: 150 }
+      };
+
+      // X locations of the year titles.
+      var yearsTitleX = {
+        2012: 40,
+        2013: 120,
+        2014: 200,
+        2015: 280,
+        2016: 360,
+        2017: 440
+      };
+
+
+      // var mannerCenters = {
+      //   Hanging: { x: width / 5 - 70, y: height },
+      //   Gunshot: { x: width / 4 + 50, y: height },
+      //   Overdose: { x: 2 * width / 3 - 180, y: height },
+      //   Fire: { x: width - 330, y: height },
+      //   Vehicle_Crash: { x: width - 190, y: height }
+      // };
+      //
+      // // X locations of the year titles.
+      // var mannersTitleX = {
+      //   "Hanging": 100,
+      //   "Gunshot": width - 660,
+      //   "Overdose": width - 480,
+      //   "Fire": width - 300,
+      //   "Vehicle Crash": width - 150
+      // };
+
+
+      // @v4 strength to apply to the position forces
+      var forceStrength = 0.05;
+      // var forceStrength1 = 0.08;
+
+
+      // These will be set in create_nodes and create_vis
+      var svg = null;
+      var bubbles = null;
+      var nodes = [];
+
+      // Charge function that is called for each node.
+      // As part of the ManyBody force.
+      // This is what creates the repulsion between nodes.
+      //
+      // Charge is proportional to the diameter of the
+      // circle (which is stored in the radius attribute
+      // of the circle's associated data.
+      //
+      // This is done to allow for accurate collision
+      // detection with nodes of different sizes.
+      //
+      // Charge is negative because we want nodes to repel.
+      // @v4 Before the charge was a stand-alone attribute
+      //  of the force layout. Now we can use it as a separate force!
+      function charge(d) {
+        return -Math.pow(d.radius, 2.35) * forceStrength;
+      }
+
+
+      // Here we create a force layout and
+      // @v4 We create a force simulation now and
+      //  add forces to it.
+      var simulation = d3.forceSimulation()
+        .velocityDecay(0.3)
+        .force('x', d3.forceX().strength(forceStrength).x(center.x))
+        .force('y', d3.forceY().strength(forceStrength).y(center.y))
+        .force('charge', d3.forceManyBody().strength(charge))
+        .on('tick', ticked);
+
+
+      // @v4 Force starts up automatically,
+      //  which we don't want as there aren't any nodes yet.
+      simulation.stop();
+
+
+      // Nice looking colors - no reason to buck the trend
+      // @v4 scales now have a flattened naming scheme
+      var fillColor = d3.scaleOrdinal()
+        .domain(['f', 'm'])
+        .range(['#262626', 'White']);
+
+
+      /*
+       * This data manipulation function takes the raw data from
+       * the CSV file and converts it into an array of node objects.
+       * Each node will store data and visualization values to visualize
+       * a bubble.
+       *
+       * rawData is expected to be an array of data objects, read in from
+       * one of d3's loading functions like d3.csv.
+       *
+       * This function returns the new node array, with a node in that
+       * array for each element in the rawData input.
+       */
+      function createNodes(rawData) {
+        // Use the max total_amount in the data as the max in the scale's domain
+        // note we have to ensure the total_amount is a number.
+        // var maxAmount = d3.max(rawData, function (d) { return +d.total_amount; });
+
+        // Sizes bubbles based on area.
+        // @v4: new flattened scale names.
+        // var radiusScale = d3.scalePow()
+        //   .exponent(0.5)
+        //   .range([2, 85])
+        //   .domain([0, maxAmount]);
+
+        // Use map() to convert raw data into node data.
+        // Checkout http://learnjsdata.com/ for more on
+        // working with data.
+        var myNodes = rawData.map(function (d) {
+          return {
+            radius: (8),
+            name: d.name,
+            // manner: d.manner,
+            // group: d.group,
+            year: d.year,
+            county: d.county,
+            age: d.age,
+            age_range: d.age_range,
+            dob: d.dob,
+            dod: d.dod,
+            sex: d.sex,
+            // narrative: d.narrative,
+            x: Math.random() * 900,
+            y: Math.random() * 800
+          };
+        });
+
+        // sort them to prevent occlusion of smaller nodes.
+        myNodes.sort(function (a, b) { return b.value - a.value; });
+
+        return myNodes;
+      }
+
+      /*
+       * Main entry point to the bubble chart. This function is returned
+       * by the parent closure. It prepares the rawData for visualization
+       * and adds an svg element to the provided selector and starts the
+       * visualization creation process.
+       *
+       * selector is expected to be a DOM element or CSS selector that
+       * points to the parent element of the bubble chart. Inside this
+       * element, the code will add the SVG continer for the visualization.
+       *
+       * rawData is expected to be an array of data objects as provided by
+       * a d3 loading function like d3.csv.
+       */
+      var chart = function chart(selector, rawData) {
+        // convert raw data into nodes data
+        nodes = createNodes(rawData);
+
+
+        // var svg = d3.select('#vis').append('svg')
+
+        // Create a SVG element inside the provided selector
+        // with desired size.
+        svg = d3.select(selector)
+          .append('svg')
+          .attr('width', "500")
+          .attr('height', "400")
+          .attr('transform', "translate(0, -20)")
+
+        // Bind nodes data to what will become DOM elements to represent them.
+        bubbles = svg.selectAll('.bubble')
+          .data(nodes, function (d) { return d.id; });
+
+        // Create new circle elements each with class `bubble`.
+        // There will be one circle.bubble for each object in the nodes array.
+        // Initially, their radius (r attribute) will be 0.
+        // @v4 Selections are immutable, so lets capture the
+        //  enter selection to apply our transtition to below.
+        var bubblesE = bubbles.enter().append('circle')
+          .classed('bubble', true)
+          .attr('r', 0)
+          .attr('fill', function (d) { return fillColor(d.sex); })
+          .attr('stroke', function (d) { return d3.rgb(fillColor(d.sex)).darker(); })
+          .attr('stroke-width', 2)
+          .on('mouseover', showDetail)
+          .on('mouseout', hideDetail);
+
+        // @v4 Merge the original empty selection and the enter selection
+        bubbles = bubbles.merge(bubblesE);
+
+        // Fancy transition to make bubbles appear, ending with the
+        // correct radius
+        bubbles.transition()
+          .duration(2000)
+          .attr('r', function (d) { return d.radius; });
+
+        // Set the simulation's nodes to our newly created nodes array.
+        // @v4 Once we set the nodes, the simulation will start running automatically!
+        simulation.nodes(nodes);
+        // simulation1.nodes(nodes);
+
+
+
+
+
+
+        // Set initial layout to single group.
+        groupBubbles();
+      };
+
+
+      /*
+       * Callback function that is called after every tick of the
+       * force simulation.
+       * Here we do the acutal repositioning of the SVG circles
+       * based on the current x and y values of their bound node data.
+       * These x and y values are modified by the force simulation.
+       */
+      function ticked() {
+        bubbles
+          .attr('cx', function (d) { return d.x; })
+          .attr('cy', function (d) { return d.y; });
+      }
+
+
+
+      // function ticked1() {
+      //   bubbles
+      //     .attr('cx', function (d) { return d.x; })
+      //     .attr('cy', function (d) { return d.y; });
+      // }
+
+      /*
+       * Provides a x value for each node to be used with the split by year
+       * x force.
+       */
+      function nodeYearPos(d) {
+        return yearCenters[d.year].x;
+      }
+
+      function nodeAgePos(d) {
+        return ageCenters[d.age_range].x;
+      }
+
+      // function nodeMannerPos(d) {
+      //   return mannerCenters[d.manner].x;
+      // }
+
+
+
+      /*
+       * Sets visualization in "single group mode".
+       * The year labels are hidden and the force layout
+       * tick function is set to move all nodes to the
+       * center of the visualization.
+       */
+      function groupBubbles() {
+        hideYearTitles();
+        hideAgeTitles();
+        // hideMannerTitles();
+
+
+        // @v4 Reset the 'x' force to draw the bubbles to the center.
+        simulation.force('x', d3.forceX().strength(forceStrength).x(center.x));
+
+        // @v4 We can reset the alpha value and restart the simulation
+        simulation.alpha(1).restart();
+      }
+
+      // function groupBubbles1() {
+      //   hideYearTitles();
+      //   hideAgeTitles();
+      //
+      //   // @v4 Reset the 'x' force to draw the bubbles to the center.
+      //   simulation1.force('x', d3.forceX().strength(forceStrength).x(center.x));
+      //
+      //   // @v4 We can reset the alpha value and restart the simulation
+      //   simulation1.alpha(1).restart();
+      // }
+      /*
+       * Sets visualization in "split by year mode".
+       * The year labels are shown and the force layout
+       * tick function is set to move nodes to the
+       * yearCenter of their data's year.
+       */
+      function splitBubbles() {
+        showYearTitles();
+        hideAgeTitles();
+        // hideMannerTitles();
+
+
+        // @v4 Reset the 'x' force to draw the bubbles to their year centers
+        simulation.force('x', d3.forceX().strength(forceStrength).x(nodeYearPos));
+
+
+        // @v4 We can reset the alpha value and restart the simulation
+        simulation.alpha(1).restart();
+      }
+
+
+
+      function splitBubbles1() {
+        showAgeTitles();
+        hideYearTitles();
+        // hideMannerTitles();
+
+
+        // @v4 Reset the 'x' force to draw the bubbles to their year centers
+        simulation.force('x', d3.forceX().strength(forceStrength).x(nodeAgePos));
+
+        // @v4 We can reset the alpha value and restart the simulation
+        simulation.alpha(1).restart();
+      }
+
+
+      // function splitBubbles2() {
+      //   showMannerTitles();
+      //   hideYearTitles();
+      //   hideAgeTitles();
+      //
+      //
+      //   // @v4 Reset the 'x' force to draw the bubbles to their year centers
+      //   simulation.force('x', d3.forceX().strength(forceStrength).x(nodeMannerPos));
+      //
+      //   // @v4 We can reset the alpha value and restart the simulation
+      //   simulation.alpha(1).restart();
+      // }
+
+
+      /*
+       * Hides Year title displays.
+       */
+      function hideYearTitles() {
+        svg.selectAll('.year').remove();
+      }
+
+      function hideAgeTitles() {
+        svg.selectAll('.age_range').remove();
+      }
+
+      // function hideMannerTitles() {
+      //   svg.selectAll('.manner').remove();
+      // }
+
+      /*
+       * Shows Year title displays.
+       */
+      function showYearTitles() {
+        // Another way to do this would be to create
+        // the year texts once and then just hide them.
+        var yearsData = d3.keys(yearsTitleX);
+        var years = svg.selectAll('.year')
+          .data(yearsData);
+
+        years.enter().append('text')
+          .attr('class', 'year')
+          .attr('x', function (d) { return yearsTitleX[d]; })
+          .attr('y', 40)
+          .attr('text-anchor', 'middle')
+          .text(function (d) { return d; })
+      }
+
+
+      function showAgeTitles() {
+        // Another way to do this would be to create
+        // the year texts once and then just hide them.
+        var agesData = d3.keys(agesTitleX);
+        var ages = svg.selectAll('.age_range')
+          .data(agesData);
+
+        ages.enter().append('text')
+          .attr('class', 'age_range')
+          .attr('x', function (d) { return agesTitleX[d]; })
+          .attr('y', 40)
+          .attr('text-anchor', 'middle')
+          .text(function (d) { return d; });
+      }
+
+
+      // function showMannerTitles() {
+      //   // Another way to do this would be to create
+      //   // the year texts once and then just hide them.
+      //   var mannersData = d3.keys(mannersTitleX);
+      //   var manners = svg.selectAll('.manner')
+      //     .data(mannersData);
+      //
+      //   manners.enter().append('text')
+      //     .attr('class', 'manner')
+      //     .attr('x', function (d) { return mannersTitleX[d]; })
+      //     .attr('y', 20)
+      //     .attr('text-anchor', 'middle')
+      //     .text(function (d) { return d; });
+      // }
+
+
+      /*
+       * Function called on mouseover to display the
+       * details of a bubble in the tooltip.
+       */
+      function showDetail(d) {
+        // change outline to indicate hover state.
+        d3.select(this).attr('stroke', 'black');
+
+        var content =
+        // '<span class="name">' +
+        //               d.name + '</span><br/>' + ' </span><span class="dob">' + d.dob + ' - ' + d.dod +
+        //               '</span><br/>' +
+
+                      '<span class="category">Age: </span><span class="value">' +
+                      d.age +
+                      '</span><br/>' +
+                      '<span class="category">County: </span><span class="value">' +
+                      d.county
+                      ;
+
+        tooltip1.showTooltip(content, d3.event);
+      }
+
+      /*
+       * Hides tooltip
+       */
+      function hideDetail(d) {
+        // reset outline
+        d3.select(this)
+          .attr('stroke', d3.rgb(fillColor(d.sex)).darker());
+
+        tooltip1.hideTooltip();
+      }
+
+
+      chart.toggleDisplay = function (displayName) {
+        if (displayName === 'year') {
+          splitBubbles();
+        }
+
+        else if (displayName === 'age_range') {
+          splitBubbles1();
+        }
+
+        else if (displayName === 'manner') {
+          splitBubbles2();
+        }
+
+        else {
+          groupBubbles();
+        };
+      };
+
+
+      // chart.toggleDisplay = function (displayName) {
+      //   if (displayName === 'age_range') {
+      //     splitBubbles1();
+      //   } else {
+      //     groupBubbles1();
+      //   }
+      // };
+
+
+      // return the chart function from closure.
+      return chart;
+    }
+
+    /*
+     * Below is the initialization code as well as some helper functions
+     * to create a new bubble chart instance, load the data, and display it.
+     */
+
+    var myBubbleChart = bubbleChart();
+
+    /*
+     * Function called once data is loaded from CSV.
+     * Calls bubble chart function to display inside #vis div.
+     */
+    function display(error, data) {
+      if (error) {
+        console.log(error);
+      }
+
+      myBubbleChart('#bubble', data);
+    }
+
+    /*
+     * Sets up the layout buttons to allow for toggling between view modes.
+     */
+    function setupButtons() {
+      d3.select('#toolbar')
+        .selectAll('.button')
+        .on('click', function () {
+          // Remove active class from all buttons
+          d3.selectAll('.button').classed('active', false);
+          // Find the button just clicked
+          var button = d3.select(this);
+
+          // Set it as the active button
+          button.classed('active', true);
+
+          // Get the id of the button
+          var buttonId = button.attr('id');
+
+          // Toggle the bubble chart based on
+          // the currently clicked button.
+          myBubbleChart.toggleDisplay(buttonId);
+        });
+    }
+
+    /*
+     * Helper function to convert a number into a string
+     * and add commas to it to improve presentation.
+     */
+    function addCommas(nStr) {
+      nStr += '';
+      var x = nStr.split('.');
+      var x1 = x[0];
+      var x2 = x.length > 1 ? '.' + x[1] : '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+      }
+
+      return x1 + x2;
+    }
+
+
+    d3.csv('suicide.csv', display);
+
+    setupButtons();
+
+    function floatingTooltip(tooltipId, width) {
+      // Local variable to hold tooltip div for
+      // manipulation in other functions.
+      var tt = d3.select('#bubble')
+        .append('div')
+        .attr('class', 'tooltip')
+        .attr('id', tooltipId)
+        .style('pointer-events', 'none');
+
+      // Set a width if it is provided.
+      if (width) {
+        tt.style('width', width);
+      }
+
+      // Initially it is hidden.
+      hideTooltip();
+
+
+      function showTooltip(content, event) {
+        tt.style('opacity', 0.9)
+          .html(content);
+
+        updatePosition(event);
+      }
+
+      /*
+       * Hide the tooltip div.
+       */
+      function hideTooltip() {
+        tt.style('opacity', 0);
+      }
+
+      /*
+       * Figure out where to place the tooltip
+       * based on d3 mouse event.
+       */
+      function updatePosition(event) {
+        var xOffset = 20;
+        var yOffset = 10;
+
+        var ttw = tt.style('width');
+        var tth = tt.style('height');
+
+        var wscrY = window.scrollY;
+        var wscrX = window.scrollX;
+
+        var curX = (document.all) ? event.clientX + wscrX : event.pageX;
+        var curY = (document.all) ? event.clientY + wscrY : event.pageY;
+        var ttleft = ((curX - wscrX + xOffset * 2 + ttw) > window.innerWidth) ?
+                     curX - ttw - xOffset * 2 : curX + xOffset;
+
+        if (ttleft < wscrX + xOffset) {
+          ttleft = wscrX + xOffset;
+        }
+
+        var tttop = ((curY - wscrY + yOffset * 2 + tth) > window.innerHeight) ?
+                    curY - tth - yOffset * 2 : curY + yOffset;
+
+        if (tttop < wscrY + yOffset) {
+          tttop = curY + yOffset;
+        }
+
+        tt
+          .style('top', tttop + 'px')
+          .style('left', ttleft + 'px');
+      }
+
+      return {
+        showTooltip: showTooltip,
+        hideTooltip: hideTooltip,
+        updatePosition: updatePosition
+      };
+    }
+
+
+    </script>
+
+  </body>
+</html>
