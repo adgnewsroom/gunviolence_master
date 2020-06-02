@@ -36,13 +36,13 @@ var countryById = d3.map();
 
 // we use queue because we have 2 data files to load.
 queue()
-    .defer(d3.json, "USA.json")
+    .defer(d3.json, "https://raw.githubusercontent.com/adgnewsroom/gunviolence_master/master/USA.json")
     .defer(d3.csv, "rate.csv", typeAndSet) // process
     .await(loaded);
 
 
     Promise.all([
-      d3.json("USA.json"),
+      d3.json("https://raw.githubusercontent.com/adgnewsroom/gunviolence_master/master/USA.json"),
       d3.csv("rate.csv")
 ])
 
