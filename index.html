@@ -72,7 +72,7 @@ padding-top: 5vh;
 
   #toolbar {
     margin: auto;
-    width: 280px;
+    width: 400px;
   }
 
 
@@ -106,14 +106,14 @@ padding-top: 5vh;
       cursor: default;
     }
 
-    /* .manner {
+    .manner {
       background-color: black;
       border-radius: 5px;
       padding: 3px;
       font-size: 18px;
       fill: #636363;
       cursor: default;
-    } */
+    }
 
     hr.divider {
     margin: 0.3em;
@@ -131,7 +131,7 @@ padding-top: 5vh;
   	opacity: 0.8;
     /* color: black; */
   	padding: 8px;
-  	max-width: 190px;
+  	max-width: 200px;
   	/* font-size: 12px; */
   	z-index: 10;
   }
@@ -146,7 +146,7 @@ padding-top: 5vh;
   }
 
   .tooltip .name {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 35px;
     font-family: 'Gelasio', serif;
     background-color: black;
@@ -173,6 +173,15 @@ padding-top: 5vh;
 
 .wrapper {
   overflow-x:hidden;
+}
+
+#subscribe {
+  display: inline-block;
+  position: absolute;
+  top: 10;
+  right: 30;
+  width: 77px;
+  z-index: 150;
 }
 
 .background {
@@ -230,7 +239,8 @@ h4 {
   /* -webkit-text-stroke-width: 0.3px;
   -webkit-text-stroke-color: white; */
   text-align: center;
-  padding-top: 30px
+  padding-top: 30px;
+  padding-bottom: 10px
 }
 
 h5 {
@@ -242,9 +252,9 @@ h5 {
 
 h7 {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.3em;
-  color: black;
-  font-weight: 700;
+  font-size: 1.0em;
+  color: White;
+  font-weight: 300;
 }
 
 p {
@@ -254,6 +264,20 @@ p {
   margin-bottom: 1em;
   font-family: 'Gelasio', serif;
   font-size: 1.3em;
+}
+
+#aboutthispage p{
+  font-family: 'Roboto', sans-serif;
+  max-width: 40vw;
+  font-size: 1.0em;
+  font-weight: 50;
+}
+
+.cardtitle p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
 }
 
 .captions p{
@@ -321,13 +345,11 @@ color: White
 #share {
   display: inline-block;
   position: absolute;
-  top: 5;
-  right: 1;
+  top: 4;
+  left: 5;
   width: 80px;
   z-index: 150;
 }
-
-/* buttons */
 
 #share a {
   display: inline-block;
@@ -343,8 +365,8 @@ color: White
   display: inline-block;
   float: left;
   position: relative;
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   margin: 0px;
   padding: 0px;
 }
@@ -711,13 +733,16 @@ p {
         <a target="_blank" class="facebook" title="Share on Facebook" href="https://www.facebook.com/share.php?u=https://www.arkansasonline.com/yearinreview/&title=Explore the best stories from the Arkansas Democrat-Gazette newsroom in 2019."><img
             src="facebook.png"></a>
       </div>
+      <div id="subscribe">
+            <a href="https://subscribe.wehco.com/adg/adg/landing/" target="_blank"><button type="button" class="btn btn-outline-light btn-sm"><h7>SUBSCRIBE</h7></button></a>
+</div>
       <div class="background"></div>
       <div class="foreground">
           <div id="titlecard">
           <h1>Children in Peril</h1>
         </div>
             <h3>Arkansas ranks in the top 10 states with the most children who die by gunfire.</h3>
-            <h5>By Ginny Monk and Yutao Chen</h5>
+            <h5>By Ginny Monk</h5>
       </div>
 
     <div class="scroll">
@@ -756,19 +781,19 @@ p {
 
     <div class="container1">
 
-      <h4 style="color: #e6e6e6; text-shadow: 2px 2px 8px #000000;">Arkansas children died from gunshots from 2012 to 2017 <br>(DATA NEEDS UPDATING)</h4>
+      <h4 style="color: #e6e6e6; text-shadow: 2px 2px 8px #000000;">Arkansas children died from gunshots from 2012 to 2017</h4>
       <div id="toolbar">
         <a id="all" class="button active">All deaths</a>
-        <!-- <a id="manner" class="button">By manner</a> -->
+        <a id="manner" class="button">By manner</a>
         <a id="year" class="button">By year</a>
         <a id="age_range" class="button">By age</a>
 
         <svg class="legend" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        	 viewBox="0 0 50 33" style="enable-background:new 0 0 50 33; width: 70px; transform: translate(300px, -20px);" xml:space="preserve">
+        	 viewBox="0 0 50 33" style="enable-background:new 0 0 50 33; width: 70px; transform: translate(400px, -20px);" xml:space="preserve">
         <style type="text/css">
         	.st0{fill:#262626;}
         	.st1{fill:white;}
-        	.st2{font-family:'ArialMT';}
+        	.st2{font-family:'ArialMT';fill:white;}
         	.st3{font-size:10px;}
         </style>
         <g>
@@ -777,14 +802,14 @@ p {
         <g>
         	<rect x="4" y="19" class="st1" width="9" height="9"/>
         </g>
-        <text transform="matrix(1 0 0 1 15.9678 12.7139)" class="st2 st3">Male</text>
-        <text transform="matrix(1 0 0 1 15.9678 27.7139)" class="st2 st3">Female</text>
+        <text transform="matrix(1 0 0 1 15.9678 12.7139)" class="st2 st3">Female</text>
+        <text transform="matrix(1 0 0 1 15.9678 27.7139)" class="st2 st3">Male</text>
         </svg>
       </div>
       <div id="bubble"></div>
     </div>
 
-    <div class="captions"><p>*Victims' names are withheld.</p></div>
+    <div class="captions"><p>*Suicide victims' names are withheld.</p></div>
 
     <div class="spacer" style="padding: 2vh"></div>
 
@@ -800,10 +825,9 @@ p {
     <div id="vis"></div>
 
     <div class="captions"><p>Source: <a href="https://www.cdc.gov/" target="_blank" class="badge badge-secondary">Centers for Disease Control and Prevention</p></a></div>
-
+  </div>
     <div class="spacer" style="padding: 2vh"></div>
 
-  </div>
     <p>The CDC’s 2018 death statistics, which were published after the newspaper began its data analysis, show that 23 children died from gunfire in Arkansas that year.</p>
 
     <p>The ages of children in cases examined by the newspaper ranged from a 3-month-old girl whose father accidentally shot her in the head while she was in her car seat to a boy nearing his 18th birthday who killed himself.</p>
@@ -1080,6 +1104,31 @@ p {
 
   <div class="spacer" style="padding: 10vh"></div>
 
+
+
+
+  <div class="d-flex justify-content-center">
+
+  <div class="card" style="background:#f0f0f0">
+  <div class="card-body">
+    <div class="cardtitle"><p>About this project</p></div>
+    <div id="aboutthispage">
+    <p>To produce these articles, Arkansas Democrat-Gazette reporter Ginny Monk reviewed thousands of pages of documents, photographs and videos obtained from county coroners, local police departments, news archives and state prosecutors.</p>
+    <p>Information gleaned from these sources enabled Monk to build a database with details about more than 1,500 deaths of minors from 2012 to 2017.  Data from 2018 and 2019 were unavailable at the time this series was produced.<p>
+    <p>Monk submitted public records requests to every prosecutor and county coroner in the state. Some prosecutors said they no longer had case files for some cases. A few coroners provided only redacted records and some did not provide all the records for the time period requested, saying their predecessors had taken records home with them.<p>
+    <p>The database includes demographic information, contacts the children had with Arkansas Department of Human Services workers before their deaths, details about the circumstances of their deaths and any criminal charges filed in their deaths. It includes all causes of deaths, but does not include miscarriages or stillborn babies unless charges were filed in those cases — a rare occurrence.<p>
+    <p>Monk analyzed this data to determine which cases were ruled the result of abuse or neglect or whether the children were in foster care at the time of their deaths.</p>
+    <p>She then conducted interviews with current and former investigators, family members, health specialists and experts in child abuse and neglect.</p>
+    <p>Support for Monk’s reporting on this project also came from the Fund for Journalism on Child Well-Being, a program of the USC Annenberg Center for Health Journalism at the University of Southern California.</p>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="spacer" style="padding: 10vh"></div>
+
+
+
   <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark" style="background-color: #383838">
 
@@ -1256,10 +1305,6 @@ p {
     // });
 
 
-
-
-
-
     /* bubbleChart creation function. Returns a function that will
      * instantiate a new bubble chart given a DOM element to display
      * it in and a dataset to visualize.
@@ -1278,59 +1323,59 @@ p {
 
 
       var ageCenters = {
-        low: { x: 130, y: 150 },
-        medium: { x: 260, y: 150 },
-        high: { x: 360, y: 150 }
+        low: { x: 200, y: 150 },
+        medium: { x: 330, y: 150 },
+        high: { x: 430, y: 150 }
       };
 
       // X locations of the year titles.
       var agesTitleX = {
-        "0-5": 100,
-        "6-11": 230,
-        "12-18": 360,
+        "0-5": 170,
+        "6-11": 300,
+        "12-18": 430,
       };
 
 
       // Locations to move bubbles towards, depending
       // on which view mode is selected.
-      var center = { x: 250, y: 150 };
+      var center = { x: 330, y: 150 };
 
       var yearCenters = {
-        2012: { x: 70, y: 150 },
-        2013: { x: 140, y: 150 },
-        2014: { x: 210, y: 150 },
-        2015: { x: 280, y: 150 },
-        2016: { x: 350, y: 150 },
-        2017: { x: 420, y: 150 }
+        2012: { x: 150, y: 150 },
+        2013: { x: 220, y: 150 },
+        2014: { x: 290, y: 150 },
+        2015: { x: 360, y: 150 },
+        2016: { x: 430, y: 150 },
+        2017: { x: 500, y: 150 }
       };
 
       // X locations of the year titles.
       var yearsTitleX = {
-        2012: 40,
-        2013: 120,
-        2014: 200,
-        2015: 280,
-        2016: 360,
-        2017: 440
+        2012: 120,
+        2013: 200,
+        2014: 280,
+        2015: 360,
+        2016: 440,
+        2017: 520
       };
 
 
-      // var mannerCenters = {
-      //   Hanging: { x: width / 5 - 70, y: height },
-      //   Gunshot: { x: width / 4 + 50, y: height },
-      //   Overdose: { x: 2 * width / 3 - 180, y: height },
-      //   Fire: { x: width - 330, y: height },
-      //   Vehicle_Crash: { x: width - 190, y: height }
-      // };
-      //
-      // // X locations of the year titles.
-      // var mannersTitleX = {
-      //   "Hanging": 100,
-      //   "Gunshot": width - 660,
-      //   "Overdose": width - 480,
-      //   "Fire": width - 300,
-      //   "Vehicle Crash": width - 150
-      // };
+      var mannerCenters = {
+        Suicide: { x: width / 5 + 20, y: 150 },
+        Accident: { x: width / 4 + 70, y: 150 },
+        Homicide: { x: width - 230, y: 150 },
+        Other: { x: width - 130, y: 150 },
+        Undetermined: { x: width - 20, y: 150 }
+      };
+
+      // X locations of the year titles.
+      var mannersTitleX = {
+        "Suicide": 85,
+        "Accident": width / 4 + 70,
+        "Homicide": width - 190,
+        "Other": width - 90,
+        "Undetermined": width + 30
+      };
 
 
       // @v4 strength to apply to the position forces
@@ -1416,7 +1461,7 @@ p {
           return {
             radius: (8),
             name: d.name,
-            // manner: d.manner,
+            manner: d.manner,
             // group: d.group,
             year: d.year,
             county: d.county,
@@ -1540,9 +1585,9 @@ p {
         return ageCenters[d.age_range].x;
       }
 
-      // function nodeMannerPos(d) {
-      //   return mannerCenters[d.manner].x;
-      // }
+      function nodeMannerPos(d) {
+        return mannerCenters[d.manner].x;
+      }
 
 
 
@@ -1555,7 +1600,7 @@ p {
       function groupBubbles() {
         hideYearTitles();
         hideAgeTitles();
-        // hideMannerTitles();
+        hideMannerTitles();
 
 
         // @v4 Reset the 'x' force to draw the bubbles to the center.
@@ -1584,7 +1629,7 @@ p {
       function splitBubbles() {
         showYearTitles();
         hideAgeTitles();
-        // hideMannerTitles();
+        hideMannerTitles();
 
 
         // @v4 Reset the 'x' force to draw the bubbles to their year centers
@@ -1600,7 +1645,7 @@ p {
       function splitBubbles1() {
         showAgeTitles();
         hideYearTitles();
-        // hideMannerTitles();
+        hideMannerTitles();
 
 
         // @v4 Reset the 'x' force to draw the bubbles to their year centers
@@ -1611,18 +1656,18 @@ p {
       }
 
 
-      // function splitBubbles2() {
-      //   showMannerTitles();
-      //   hideYearTitles();
-      //   hideAgeTitles();
-      //
-      //
-      //   // @v4 Reset the 'x' force to draw the bubbles to their year centers
-      //   simulation.force('x', d3.forceX().strength(forceStrength).x(nodeMannerPos));
-      //
-      //   // @v4 We can reset the alpha value and restart the simulation
-      //   simulation.alpha(1).restart();
-      // }
+      function splitBubbles2() {
+        showMannerTitles();
+        hideYearTitles();
+        hideAgeTitles();
+
+
+        // @v4 Reset the 'x' force to draw the bubbles to their year centers
+        simulation.force('x', d3.forceX().strength(forceStrength).x(nodeMannerPos));
+
+        // @v4 We can reset the alpha value and restart the simulation
+        simulation.alpha(1).restart();
+      }
 
 
       /*
@@ -1636,9 +1681,9 @@ p {
         svg.selectAll('.age_range').remove();
       }
 
-      // function hideMannerTitles() {
-      //   svg.selectAll('.manner').remove();
-      // }
+      function hideMannerTitles() {
+        svg.selectAll('.manner').remove();
+      }
 
       /*
        * Shows Year title displays.
@@ -1654,6 +1699,7 @@ p {
           .attr('class', 'year')
           .attr('x', function (d) { return yearsTitleX[d]; })
           .attr('y', 40)
+          .style('fill', "white")
           .attr('text-anchor', 'middle')
           .text(function (d) { return d; })
       }
@@ -1670,25 +1716,27 @@ p {
           .attr('class', 'age_range')
           .attr('x', function (d) { return agesTitleX[d]; })
           .attr('y', 40)
+          .style('fill', "white")
           .attr('text-anchor', 'middle')
           .text(function (d) { return d; });
       }
 
 
-      // function showMannerTitles() {
-      //   // Another way to do this would be to create
-      //   // the year texts once and then just hide them.
-      //   var mannersData = d3.keys(mannersTitleX);
-      //   var manners = svg.selectAll('.manner')
-      //     .data(mannersData);
-      //
-      //   manners.enter().append('text')
-      //     .attr('class', 'manner')
-      //     .attr('x', function (d) { return mannersTitleX[d]; })
-      //     .attr('y', 20)
-      //     .attr('text-anchor', 'middle')
-      //     .text(function (d) { return d; });
-      // }
+      function showMannerTitles() {
+        // Another way to do this would be to create
+        // the year texts once and then just hide them.
+        var mannersData = d3.keys(mannersTitleX);
+        var manners = svg.selectAll('.manner')
+          .data(mannersData);
+
+        manners.enter().append('text')
+          .attr('class', 'manner')
+          .attr('x', function (d) { return mannersTitleX[d]; })
+          .attr('y', 40)
+          .style('fill', "white")
+          .attr('text-anchor', 'middle')
+          .text(function (d) { return d; });
+      }
 
 
       /*
@@ -1700,9 +1748,9 @@ p {
         d3.select(this).attr('stroke', 'black');
 
         var content =
-        // '<span class="name">' +
-        //               d.name + '</span><br/>' + ' </span><span class="dob">' + d.dob + ' - ' + d.dod +
-        //               '</span><br/>' +
+        '<span class="name">' +
+                      d.name + '</span><br/>' + ' </span><span class="dob">' + d.dob + ' - ' + d.dod +
+                      '</span><br/>' +
 
                       '<span class="category">Age: </span><span class="value">' +
                       d.age +
@@ -1819,7 +1867,7 @@ p {
     }
 
 
-    d3.csv('suicide.csv', display);
+    d3.csv('gunshots.csv', display);
 
     setupButtons();
 
