@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Gelasio|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -13,7 +13,7 @@
     <style>
 
 body {
- background-color:#cccccc;
+ /* background-color:#cccccc; */
  overflow-x:hidden;
  overflow-y:scroll;
 }
@@ -186,12 +186,15 @@ padding-top: 5vh;
 
 .background {
   background-image: linear-gradient(to bottom, transparent, 60%, black),
-                    url("landing_page_original.jpg");
+                    url("landing.png");
   height: 100%;
-  filter: brightness(0.4);
-  background-position: 50% 70%;
+  filter: brightness(1.2);
+  filter: blur(1.4px);
+  background-position: 10% 95%;
   background-repeat: no-repeat;
   background-size: cover;
+  /* width: 100vw; */
+  /* height: 95vh; */
 }
 
 .foreground {
@@ -203,7 +206,8 @@ padding-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 88.5vh;
+  height: 84vh;
+  text-shadow: 3px 3px 0px black, 0 0 80px white;
 }
 
 h1 {
@@ -229,7 +233,7 @@ h3 {
   font-size: 1.6em;
   color: white;
   text-align: left;
-  max-width: 80vw;
+  max-width: 55vw;
 }
 
 h4 {
@@ -303,21 +307,34 @@ p {
   background-color: black
 }
 
-.intro {
-  /* background: black; */
+/* .intro {
 background: -webkit-gradient(linear, 100% 100%, 100% 100%, from(black), 80%, to(transparent));
 background: -webkit-linear-gradient(top, black, transparent);
 background: -moz-linear-gradient(top, black, transparent);
 background: -ms-linear-gradient(top, black, transparent);
 background: -o-linear-gradient(top, black, transparent);
 background: linear-gradient(top, black, 80%, transparent);
-/* background: linear-gradient(black, 80%, transparent) no-repeat; */
+} */
+
+
+.subintro {
+  background: black;
+  transition: all 1s ease-in-out;
 }
 
+.subintro.active {
+    background: white;
+}
 
 .subintro p{
-color: White
+  color: white;
+  transition: all 1s ease-in-out;
 }
+
+.subintro.active p{
+    color: black;
+}
+
 
 #vis {
   align-items: center;
@@ -724,6 +741,7 @@ p {
   </head>
   <body>
 <div class="wrapper">
+    <div class="subintro">
     <section id="topper">
       <div id="logo"><a href="http://www.arkansasonline.com" target="_blank"><img alt="Arkansas Democrat-Gazette" src="https://s3.amazonaws.com/new_videos/year_in_pictures/logo.png" class="center"></a></div>
 
@@ -739,11 +757,13 @@ p {
 </div>
       <div class="background"></div>
       <div class="foreground">
-          <div id="titlecard">
+          <div class="animate__animated animate__fadeindown">
           <h1>Children in Peril</h1>
-        </div>
-            <h3>Arkansas ranks in the top 10 states with the most children who die by gunfire.</h3>
+  </div>
+  <div class="animate__animated animate__fadeinup animate__delay-1s">
+            <h3>Toddler Tacari Briggs' death from gunfire became part of Arkansas' high rate of child gun-violence fatalities.</h3>
             <h5>By Ginny Monk</h5>
+          </div>
       </div>
 
     <div class="scroll">
@@ -755,9 +775,9 @@ p {
   </section>
 
 
-<div class="spacer" style="padding: 8vh; background: black"></div>
-<div class="intro">
-  <div class="subintro">
+<div class="spacer" style="padding: 8vh;"></div>
+<!-- <div class="intro"> -->
+
 <article data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="800">
   <div class="dropcap">
     <p>Fingers clumsy from sleep, Delana Aguire accidentally answered the 2 a.m. call. She softly said hello to avoid waking the two children next to her.</p>
@@ -792,8 +812,8 @@ p {
         <svg class="legend" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         	 viewBox="0 0 50 33" style="enable-background:new 0 0 50 33; width: 70px; transform: translate(400px, -20px);" xml:space="preserve">
         <style type="text/css">
-        	.st0{fill:#262626;}
-        	.st1{fill:white;}
+        	.st0{fill:#58abb9;}
+        	.st1{fill:#ee843e;}
         	.st2{font-family:'ArialMT';fill:white;}
         	.st3{font-size:10px;}
         </style>
@@ -811,7 +831,7 @@ p {
     </div>
 
     <div class="captions"><p>*Suicide victims' names are withheld.</p></div>
-</div>
+
     <div class="spacer" style="padding: 2vh"></div>
 
     <p>During the same period, however, federal mortality data showed 140 Arkansas children died from gunshots. The discrepancy can be explained by the failure or inability of some coroners and prosecutors to provide the Democrat-Gazette with requested records and differences in the way data are reported to the Centers for Disease Control and Prevention.</p>
@@ -825,7 +845,7 @@ p {
     <p>Teenage boys constituted the largest group of those who died of gunshots, the newspaper’s data show.</p>
 
     <p>Curbing the rate of child deaths from guns poses challenges for health professionals and others who seek to prevent gun violence. Education is key, and steps such as gun locks and gun safes can work, experts say.</p>
-  </div>
+
     <p>But even when provided with gun locks, many parents won’t use them, according to research from nonprofits and interviews with local gun-violence-prevention advocates.</p>
 
     <p>Arkansas Children’s Hospital is one of several groups working to decrease gun deaths and injury of children through education efforts, research and providing access to preventative tools such as gun locks.</p>
@@ -852,7 +872,7 @@ p {
 
 
 </article>
-    <div class="spacer" style="padding: 3vh"></div>
+    <div class="spacer" style="padding: 5vh"></div>
 
 <article>
 
@@ -1124,7 +1144,7 @@ p {
   </div>
 
   <div class="spacer" style="padding: 10vh"></div>
-
+</div>
 
 
   <!-- Footer -->
@@ -1261,12 +1281,25 @@ p {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="map.js"></script>
+    <!-- <script src="map.js"></script> -->
     <script src="linechart.js"></script>
-    <!-- <script src="bubble.js"></script> -->
 
 
     <script>
+
+
+
+    $(window).on("scroll", function() {
+    if($(window).scrollTop() > 2300) {
+        $(".subintro").addClass("active");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $(".subintro").removeClass("active");
+    }
+});
+
+
+
     var flky = new Flickity( '.carousel', {});
 
     AOS.init();
@@ -1274,43 +1307,127 @@ p {
     AOS.refresh();
 
 
-    var titleCard = "#titlecard";
-    //The effect that will be applied to your page element. See https://daneden.github.io/animate.css/ for full list.
-    var yourEffect = "fadeInUp";
-    var effectClass = "animated " + yourEffect;
-    jQuery( document ).ready(function() {
-      jQuery(titleCard).show().addClass(effectClass).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        jQuery(this).removeClass();
-      });
-    });
+    //map starts here
+
+    var width = 900;
+        height = 700;
+
+    var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-5, 0])
+      .html(function(d) {
+        var dataRow = countryById.get(d.properties.name);
+           if (dataRow) {
+               console.log(dataRow);
+               return dataRow.states + ": " + dataRow.rate + dataRow.deaths;
+           } else {
+               console.log("no dataRow", d);
+               return dataRow.states + ": No data.";
+           }
+      })
 
 
-    // $(function() {
-    //
-    //     var documentEl = $(document),
-    //         fadeElem = $('#topper');
-    //
-    //     documentEl.on('scroll', function() {
-    //         var currScrollPos = documentEl.scrollTop();
-    //
-    //
-    //         fadeElem.each(function() {
-    //             var $this = $(this),
-    //                 elemOffsetTop = $this.offset().top;
-    //             if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/800);
-    //         });
-    //     });
-    // });
+    var svg2 = d3.select('#vis').append('svg')
+        .attr("width", "80%")
+        .attr("height", "80%")
+        .attr("viewBox", "20 20 " + width + " " + height)
+
+    svg2.call(tip);
+
+    var projection = d3.geoAlbersUsa()
+        .scale(1200) // mess with this if you want
+        .translate([width / 2, height / 2]);
+
+    var path = d3.geoPath()
+        .projection(projection);
+
+    var colorScale = d3.scaleLinear().range(["#fee5d9", "#a50f15"]).interpolate(d3.interpolateLab);
+
+    var countryById = d3.map();
+
+    // we use queue because we have 2 data files to load.
+    queue()
+        .defer(d3.json, "https://raw.githubusercontent.com/adgnewsroom/gunviolence_master/master/USA.json")
+        .defer(d3.csv, "rate.csv", typeAndSet) // process
+        .await(loaded);
 
 
-    /* bubbleChart creation function. Returns a function that will
-     * instantiate a new bubble chart given a DOM element to display
-     * it in and a dataset to visualize.
-     *
-     * Organization and style inspired by:
-     * https://bost.ocks.org/mike/chart/
-     *
-     */
+        Promise.all([
+          d3.json("https://raw.githubusercontent.com/adgnewsroom/gunviolence_master/master/USA.json"),
+          d3.csv("rate.csv")
+    ])
+
+    function typeAndSet(d) {
+        d.rate = +d.rate;
+        d.deaths = +d.deaths;
+        d.population = +d.population;
+        countryById.set(d.states, d);
+        return d;
+    }
+
+    function getColor(d) {
+        var dataRow = countryById.get(d.properties.name);
+        if (dataRow) {
+            console.log(dataRow);
+            return colorScale(dataRow.rate);
+        } else {
+            console.log("no dataRow", d);
+            return "#ccc";
+        }
+    }
+
+
+    function loaded(error, usa, rate) {
+
+        console.log(usa);
+        console.log(rate);
+
+        colorScale.domain(d3.extent(rate, function(d) {return d.rate;}));
+
+        var states = topojson.feature(usa, usa.objects.units).features;
+
+        svg2.selectAll('path.states')
+            .data(states)
+            .enter()
+            .append('path')
+            .attr('class', 'states')
+            .attr('d', path)
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide)
+            .attr('fill', function(d,i) {
+                console.log(d.properties.name);
+                return getColor(d);
+            })
+            .append("title");
+
+        var linear = colorScale;
+
+        svg2.append("g")
+          .attr("class", "legendLinear")
+          .attr("transform", "translate(80,20)")
+          .attr("stroke", "black")
+          .attr("stroke-width", 0.5);
+
+
+        var legendLinear = d3.legendColor()
+          .shapeWidth(30)
+          .orient('horizontal')
+          .scale(linear);
+
+        svg2.select(".legendLinear")
+          .call(legendLinear);
+
+    }
+
+
+
+
+
+
+
+
+    // bubble chart starts here
+
     function bubbleChart() {
       // Constants for sizing
       var width = 500;
@@ -1386,28 +1503,10 @@ p {
       var bubbles = null;
       var nodes = [];
 
-      // Charge function that is called for each node.
-      // As part of the ManyBody force.
-      // This is what creates the repulsion between nodes.
-      //
-      // Charge is proportional to the diameter of the
-      // circle (which is stored in the radius attribute
-      // of the circle's associated data.
-      //
-      // This is done to allow for accurate collision
-      // detection with nodes of different sizes.
-      //
-      // Charge is negative because we want nodes to repel.
-      // @v4 Before the charge was a stand-alone attribute
-      //  of the force layout. Now we can use it as a separate force!
       function charge(d) {
         return -Math.pow(d.radius, 2.35) * forceStrength;
       }
 
-
-      // Here we create a force layout and
-      // @v4 We create a force simulation now and
-      //  add forces to it.
       var simulation = d3.forceSimulation()
         .velocityDecay(0.3)
         .force('x', d3.forceX().strength(forceStrength).x(center.x))
@@ -1425,42 +1524,15 @@ p {
       // @v4 scales now have a flattened naming scheme
       var fillColor = d3.scaleOrdinal()
         .domain(['f', 'm'])
-        .range(['#262626', 'White']);
+        .range(['#58abb9', '#ee843e']);
 
 
-      /*
-       * This data manipulation function takes the raw data from
-       * the CSV file and converts it into an array of node objects.
-       * Each node will store data and visualization values to visualize
-       * a bubble.
-       *
-       * rawData is expected to be an array of data objects, read in from
-       * one of d3's loading functions like d3.csv.
-       *
-       * This function returns the new node array, with a node in that
-       * array for each element in the rawData input.
-       */
       function createNodes(rawData) {
-        // Use the max total_amount in the data as the max in the scale's domain
-        // note we have to ensure the total_amount is a number.
-        // var maxAmount = d3.max(rawData, function (d) { return +d.total_amount; });
-
-        // Sizes bubbles based on area.
-        // @v4: new flattened scale names.
-        // var radiusScale = d3.scalePow()
-        //   .exponent(0.5)
-        //   .range([2, 85])
-        //   .domain([0, maxAmount]);
-
-        // Use map() to convert raw data into node data.
-        // Checkout http://learnjsdata.com/ for more on
-        // working with data.
         var myNodes = rawData.map(function (d) {
           return {
             radius: (8),
             name: d.name,
             manner: d.manner,
-            // group: d.group,
             year: d.year,
             county: d.county,
             age: d.age,
@@ -1468,7 +1540,6 @@ p {
             dob: d.dob,
             dod: d.dod,
             sex: d.sex,
-            // narrative: d.narrative,
             x: Math.random() * 900,
             y: Math.random() * 800
           };
@@ -1480,43 +1551,20 @@ p {
         return myNodes;
       }
 
-      /*
-       * Main entry point to the bubble chart. This function is returned
-       * by the parent closure. It prepares the rawData for visualization
-       * and adds an svg element to the provided selector and starts the
-       * visualization creation process.
-       *
-       * selector is expected to be a DOM element or CSS selector that
-       * points to the parent element of the bubble chart. Inside this
-       * element, the code will add the SVG continer for the visualization.
-       *
-       * rawData is expected to be an array of data objects as provided by
-       * a d3 loading function like d3.csv.
-       */
+
       var chart = function chart(selector, rawData) {
         // convert raw data into nodes data
         nodes = createNodes(rawData);
 
-
-        // var svg = d3.select('#vis').append('svg')
-
-        // Create a SVG element inside the provided selector
-        // with desired size.
         svg = d3.select(selector)
           .append('svg')
           .attr('width', "500")
           .attr('height', "400")
           .attr('transform', "translate(0, -20)")
 
-        // Bind nodes data to what will become DOM elements to represent them.
         bubbles = svg.selectAll('.bubble')
           .data(nodes, function (d) { return d.id; });
 
-        // Create new circle elements each with class `bubble`.
-        // There will be one circle.bubble for each object in the nodes array.
-        // Initially, their radius (r attribute) will be 0.
-        // @v4 Selections are immutable, so lets capture the
-        //  enter selection to apply our transtition to below.
         var bubblesE = bubbles.enter().append('circle')
           .classed('bubble', true)
           .attr('r', 0)
@@ -1526,55 +1574,25 @@ p {
           .on('mouseover', showDetail)
           .on('mouseout', hideDetail);
 
-        // @v4 Merge the original empty selection and the enter selection
         bubbles = bubbles.merge(bubblesE);
 
-        // Fancy transition to make bubbles appear, ending with the
-        // correct radius
         bubbles.transition()
           .duration(2000)
           .attr('r', function (d) { return d.radius; });
 
-        // Set the simulation's nodes to our newly created nodes array.
-        // @v4 Once we set the nodes, the simulation will start running automatically!
         simulation.nodes(nodes);
-        // simulation1.nodes(nodes);
-
-
-
-
 
 
         // Set initial layout to single group.
         groupBubbles();
       };
 
-
-      /*
-       * Callback function that is called after every tick of the
-       * force simulation.
-       * Here we do the acutal repositioning of the SVG circles
-       * based on the current x and y values of their bound node data.
-       * These x and y values are modified by the force simulation.
-       */
       function ticked() {
         bubbles
           .attr('cx', function (d) { return d.x; })
           .attr('cy', function (d) { return d.y; });
       }
 
-
-
-      // function ticked1() {
-      //   bubbles
-      //     .attr('cx', function (d) { return d.x; })
-      //     .attr('cy', function (d) { return d.y; });
-      // }
-
-      /*
-       * Provides a x value for each node to be used with the split by year
-       * x force.
-       */
       function nodeYearPos(d) {
         return yearCenters[d.year].x;
       }
@@ -1587,14 +1605,6 @@ p {
         return mannerCenters[d.manner].x;
       }
 
-
-
-      /*
-       * Sets visualization in "single group mode".
-       * The year labels are hidden and the force layout
-       * tick function is set to move all nodes to the
-       * center of the visualization.
-       */
       function groupBubbles() {
         hideYearTitles();
         hideAgeTitles();
@@ -1608,22 +1618,6 @@ p {
         simulation.alpha(1).restart();
       }
 
-      // function groupBubbles1() {
-      //   hideYearTitles();
-      //   hideAgeTitles();
-      //
-      //   // @v4 Reset the 'x' force to draw the bubbles to the center.
-      //   simulation1.force('x', d3.forceX().strength(forceStrength).x(center.x));
-      //
-      //   // @v4 We can reset the alpha value and restart the simulation
-      //   simulation1.alpha(1).restart();
-      // }
-      /*
-       * Sets visualization in "split by year mode".
-       * The year labels are shown and the force layout
-       * tick function is set to move nodes to the
-       * yearCenter of their data's year.
-       */
       function splitBubbles() {
         showYearTitles();
         hideAgeTitles();
@@ -1637,8 +1631,6 @@ p {
         // @v4 We can reset the alpha value and restart the simulation
         simulation.alpha(1).restart();
       }
-
-
 
       function splitBubbles1() {
         showAgeTitles();
@@ -1667,10 +1659,6 @@ p {
         simulation.alpha(1).restart();
       }
 
-
-      /*
-       * Hides Year title displays.
-       */
       function hideYearTitles() {
         svg.selectAll('.year').remove();
       }
@@ -1687,8 +1675,6 @@ p {
        * Shows Year title displays.
        */
       function showYearTitles() {
-        // Another way to do this would be to create
-        // the year texts once and then just hide them.
         var yearsData = d3.keys(yearsTitleX);
         var years = svg.selectAll('.year')
           .data(yearsData);
@@ -1704,8 +1690,6 @@ p {
 
 
       function showAgeTitles() {
-        // Another way to do this would be to create
-        // the year texts once and then just hide them.
         var agesData = d3.keys(agesTitleX);
         var ages = svg.selectAll('.age_range')
           .data(agesData);
@@ -1721,8 +1705,6 @@ p {
 
 
       function showMannerTitles() {
-        // Another way to do this would be to create
-        // the year texts once and then just hide them.
         var mannersData = d3.keys(mannersTitleX);
         var manners = svg.selectAll('.manner')
           .data(mannersData);
@@ -1737,10 +1719,6 @@ p {
       }
 
 
-      /*
-       * Function called on mouseover to display the
-       * details of a bubble in the tooltip.
-       */
       function showDetail(d) {
         // change outline to indicate hover state.
         d3.select(this).attr('stroke', 'black');
@@ -1760,9 +1738,6 @@ p {
         tooltip1.showTooltip(content, d3.event);
       }
 
-      /*
-       * Hides tooltip
-       */
       function hideDetail(d) {
         // reset outline
         d3.select(this)
@@ -1770,7 +1745,6 @@ p {
 
         tooltip1.hideTooltip();
       }
-
 
       chart.toggleDisplay = function (displayName) {
         if (displayName === 'year') {
@@ -1790,31 +1764,11 @@ p {
         };
       };
 
-
-      // chart.toggleDisplay = function (displayName) {
-      //   if (displayName === 'age_range') {
-      //     splitBubbles1();
-      //   } else {
-      //     groupBubbles1();
-      //   }
-      // };
-
-
-      // return the chart function from closure.
       return chart;
     }
 
-    /*
-     * Below is the initialization code as well as some helper functions
-     * to create a new bubble chart instance, load the data, and display it.
-     */
-
     var myBubbleChart = bubbleChart();
 
-    /*
-     * Function called once data is loaded from CSV.
-     * Calls bubble chart function to display inside #vis div.
-     */
     function display(error, data) {
       if (error) {
         console.log(error);
@@ -1823,9 +1777,6 @@ p {
       myBubbleChart('#bubble', data);
     }
 
-    /*
-     * Sets up the layout buttons to allow for toggling between view modes.
-     */
     function setupButtons() {
       d3.select('#toolbar')
         .selectAll('.button')
