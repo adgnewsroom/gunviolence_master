@@ -1,53 +1,52 @@
-states,rate
-Alabama,2.8
-Alaska,5.4
-Arizona,2
-Arkansas,3.3
-California,1.2
-Colorado,2.4
-Connecticut,1.2
-Delaware,1.5
-District of Columbia,3.3
-Florida,2.2
-Georgia,2.5
-Hawaii,Suppressed
-Idaho,3
-Illinois,3.2
-Indiana,2.3
-Iowa,1.6
-Kansas,2.3
-Kentucky,2.6
-Louisiana,4.4
-Maine,1.3
-Maryland,1.4
-Massachusetts,0.5
-Michigan,2.3
-Minnesota,1.5
-Mississippi,3.3
-Missouri,3.3
-Montana,3.8
-Nebraska,1.6
-Nevada,2.4
-New Hampshire,0.9
-New Jersey,0.8
-New Mexico,2.9
-New York,0.7
-North Carolina,1.9
-North Dakota,2
-Ohio,2.1
-Oklahoma,3
-Oregon,1.9
-Pennsylvania,2.2
-Rhode Island,Suppressed
-South Carolina,2.8
-South Dakota,2.5
-Tennessee,2.9
-Texas,1.9
-Utah,2.6
-Vermont,1.5
-Virginia,1.9
-Washington,1.6
-West Virginia,2.2
-Wisconsin,1.9
-Wyoming,3.3
-,2
+states,rate,deaths,population
+Alabama,2.8,189,6639250
+Alaska,5.4,61,1120296
+Arizona,2,195,9747232
+Arkansas,3.3,140,4243659
+California,1.2,669,54842163
+Colorado,2.4,181,7495932
+Connecticut,1.2,57,4615733
+Delaware,1.5,19,1225999
+District of Columbia,3.3,23,699751
+Florida,2.2,539,24536562
+Georgia,2.5,368,15003530
+Hawaii,suppressed,suppressed,suppressed
+Idaho,3,79,2599316
+Illinois,3.2,570,17857813
+Indiana,2.3,216,9487748
+Iowa,1.6,72,4364413
+Kansas,2.3,98,4318108
+Kentucky,2.6,157,6077691
+Louisiana,4.4,295,6681418
+Maine,1.3,20,1549899
+Maryland,1.4,116,8083326
+Massachusetts,0.5,38,8320973
+Michigan,2.3,310,13310871
+Minnesota,1.5,117,7708462
+Mississippi,3.3,144,4375737
+Missouri,3.3,276,8355093
+Montana,3.8,51,1353905
+Nebraska,1.6,45,2813757
+Nevada,2.4,96,4020467
+New Hampshire,0.9,14,1596462
+New Jersey,0.8,101,12023173
+New Mexico,2.9,86,2999592
+New York,0.7,181,25277909
+North Carolina,1.9,264,13751316
+North Dakota,2,20,1011832
+Ohio,2.1,333,15797692
+Oklahoma,3,173,5719323
+Oregon,1.9,99,5181454
+Pennsylvania,2.2,358,16185518
+Rhode Island,suppressed,suppressed,suppressed
+South Carolina,2.8,185,6538519
+South Dakota,2.5,31,1262002
+Tennessee,2.9,260,8987027
+Texas,1.9,800,43015636
+Utah,2.6,139,5449644
+Vermont,1.5,11,723514
+Virginia,1.9,212,11200108
+Washington,1.6,153,9670639
+West Virginia,2.2,49,2270248
+Wisconsin,1.9,148,7790485
+Wyoming,3.3,27,825771
