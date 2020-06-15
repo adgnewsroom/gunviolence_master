@@ -27,6 +27,12 @@ padding-top: 5vh;
 }
 
 
+.sectionbreak {
+  width: 100px;
+  opacity: 0.5;
+}
+
+
 .button {
   font-family: 'Roboto', sans-serif;
   min-width: 100px;
@@ -184,13 +190,19 @@ padding-top: 5vh;
   z-index: 150;
 }
 
+
+#subscribe h7:hover {
+  color: black;
+}
+
 .background {
   background-image: linear-gradient(to bottom, transparent, 60%, black),
-                    url("landing.png");
+                    url("landing1.jpg");
+
   height: 100%;
   filter: brightness(1.2);
-  filter: blur(1.4px);
-  background-position: 10% 95%;
+  filter: blur(0.2px);
+  background-position: 10% 80%;
   background-repeat: no-repeat;
   background-size: cover;
   /* width: 100vw; */
@@ -215,7 +227,7 @@ h1 {
   font-family: 'Gelasio', serif;
   text-align: center;
   font-weight: bold;
-  color: white;
+  color: #feb24c;
   display: block;
 }
 
@@ -224,7 +236,8 @@ h2 {
   text-align: center;
   font-weight: bold;
   font-size: 1.8em;
-
+  padding-bottom: 4vh;
+  color: #feb24c;
 }
 
 
@@ -233,7 +246,8 @@ h3 {
   font-size: 1.6em;
   color: white;
   text-align: left;
-  max-width: 55vw;
+  max-width: 50vw;
+  line-height: 38px;
 }
 
 h4 {
@@ -271,6 +285,20 @@ p {
   font-size: 1.3em;
 }
 
+span.badge.badge-warning {
+  font-size: 0.9em !important
+}
+
+a:hover{
+opacity: 0.8;
+}
+
+.cutout {
+  width: 40vw;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 #aboutthispage p{
   font-family: 'Roboto', sans-serif;
   max-width: 40vw;
@@ -286,13 +314,28 @@ p {
 }
 
 .captions p{
-  max-width: 730px;
+  max-width: 45vw;
   margin: auto;
   padding: 0 15px;
   margin-bottom: 1em;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.0em;
+  line-height: 23px;
   padding-bottom: 4vh;
+  color: #4a4a4a
+}
+
+
+.caption {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: darkgray;
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  padding-left: 20%;
+  min-width: 75%;
+  display: block;
 }
 
 .dropcap:first-of-type p:first-of-type:first-letter {
@@ -306,16 +349,6 @@ p {
 #topper{
   background-color: black
 }
-
-/* .intro {
-background: -webkit-gradient(linear, 100% 100%, 100% 100%, from(black), 80%, to(transparent));
-background: -webkit-linear-gradient(top, black, transparent);
-background: -moz-linear-gradient(top, black, transparent);
-background: -ms-linear-gradient(top, black, transparent);
-background: -o-linear-gradient(top, black, transparent);
-background: linear-gradient(top, black, 80%, transparent);
-} */
-
 
 .subintro {
   background: black;
@@ -345,6 +378,28 @@ background: linear-gradient(top, black, 80%, transparent);
 }
 
 
+
+.parallax-slide {
+  height: 160vh;
+}
+
+.content-slide {
+  /* height: 10vh; */
+  background: #fff;
+  text-align: center;
+}
+
+#parallax1 {
+  background: url('collage.jpg') no-repeat center;
+  background-attachment: fixed;
+}
+
+
+
+
+
+
+
 #bubble {
   align-items: center;
   justify-content: center;
@@ -363,7 +418,7 @@ background: linear-gradient(top, black, 80%, transparent);
 #share {
   display: inline-block;
   position: absolute;
-  top: 4;
+  top: 6;
   left: 5;
   width: 80px;
   z-index: 150;
@@ -403,8 +458,9 @@ background: linear-gradient(top, black, 80%, transparent);
   float: left;
   position: relative;
   flex: 0 0 700px;
-  position:relative;
-  left:51%;
+  position: relative;
+  left: 51%;
+  top: -3;
   transform:translate(-30%, 50%);
   z-index: 100;
     }
@@ -530,7 +586,7 @@ background: linear-gradient(top, black, 80%, transparent);
 
 .img-fluid {
   max-width: 45vw;
-  padding: 20px;
+  padding: 20 20 5 20;
 }
 
 .img-fluid1 {
@@ -538,42 +594,18 @@ background: linear-gradient(top, black, 80%, transparent);
   padding: 10px;
 }
 
-.subhead {
-  line-height: 0.5;
-  text-align: center;
-  padding-bottom: 8vh;
-}
-.subhead span {
-  display: inline-block;
-  position: relative;
-}
-.subhead span:before,
-.subhead span:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  top: 0;
-  width: 150px;
-}
-.subhead span:before {
-  right: 100%;
-  margin-right: 15px;
-}
-.subhead span:after {
-  left: 100%;
-  margin-left: 15px;
+.carousel img {
+  display: block;
 }
 
-.carousel-cell{
-  width: 80vw;
-  overflow: hidden;
-  padding-right:100px;
+.flickity-page-dots {
+  bottom: -90px;
 }
 
 .slideshow img {
-  width: 100%;
+  width: 60%;
+  padding-right:100px;
+
 }
 
 .slideshow {
@@ -761,7 +793,7 @@ p {
           <h1>Children in Peril</h1>
   </div>
   <div class="animate__animated animate__fadeinup animate__delay-1s">
-            <h3>Toddler Tacari Briggs' death from gunfire became part of Arkansas' high rate of child gun-violence fatalities.</h3>
+            <h3>Arkansas child gun-death rate among nation's 10 highest. <br>Toddler Tacari Briggs was one of the youngest.</h3>
             <h5>By Ginny Monk</h5>
           </div>
       </div>
@@ -775,7 +807,7 @@ p {
   </section>
 
 
-<div class="spacer" style="padding: 8vh;"></div>
+<div class="spacer" style="padding: 10vh;"></div>
 <!-- <div class="intro"> -->
 
 <article data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="800">
@@ -860,23 +892,21 @@ p {
 
     <div class="captions"><p>Source: <a href="https://www.cdc.gov/" target="_blank" class="badge badge-secondary">Centers for Disease Control and Prevention</p></a></div>
 
-    <div class="spacer" style="padding: 2vh"></div>
-
-
-    <!-- <h4>Suicides by minors, per 100,000 from 1999 to 2018</h4>
-
-    <div class="captions"><p><br>Source: <a href="https://www.cdc.gov/" target="_blank" class="badge badge-secondary">Centers for Disease Control and Prevention</p></a></div>
-
-    <div id="chart"></div> -->
-
-
 
 </article>
     <div class="spacer" style="padding: 5vh"></div>
 
+    <div class="d-flex justify-content-center">
+
+    <img class="sectionbreak" src="break.svg" />
+
+</div>
+
+<div class="spacer" style="padding: 5vh"></div>
+
 <article>
 
-    <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"Kids are put in danger"</span></h2>
+    <h2>"Kids are put in danger"</h2>
 
     <div class="dropcap">
     <p>Tacari was one of at least five children in the newspaper’s analysis who died in a shooting related to domestic violence.</p>
@@ -896,17 +926,6 @@ p {
 
     <p>“Mama, check on my babies,” she yelled from the hallway.</p>
 
-    <div class="slideshow">
-        <div class='carousel'>
-            <div class='carousel-cell'><img src="scene_1.jpg"></div>
-            <div class='carousel-cell'><img src="scene_2.jpg"></div>
-            <div class='carousel-cell'><img src="scene_3.jpg"></div>
-            <div class='carousel-cell'><img src="scene_4.jpg"></div>
-            <div class='carousel-cell'><img src="scene_5.jpg"></div>
-
-        </div>
-    </div>
-
     <p>Her mother, Leslie Curl, called 911 and ran into the bedroom.</p>
 
     <p>Curl had chosen the name Tacari; she’d noticed the word in a magazine (she thinks it was a kind of wine) and thought it was pretty — perfect for the long-awaited daughter in the family.</p>
@@ -915,11 +934,9 @@ p {
 
     <div class="spacer" style="padding: 4vh"></div>
 
-    <div class="d-flex justify-content-center">
-    <img src="tacari_1.jpg" class="img-fluid1" alt="Responsive image">
-    <img src="tacari_2.jpg" class="img-fluid1" alt="Responsive image">
-  </div>
-
+  <div id="parallax1" class="parallax-slide"></div>
+    <div id="content1" class="content-slide">
+</div>
   <div class="spacer" style="padding: 4vh"></div>
 
     <p>Their reactions were another in a litany of things that made her laugh.</p>
@@ -953,11 +970,17 @@ p {
 
 </article>
 
-    <div class="spacer" style="padding: 10vh"></div>
+    <div class="spacer" style="padding: 5vh"></div>
+    <div class="d-flex justify-content-center">
 
+    <img class="sectionbreak" src="break.svg" />
+
+</div>
+
+<div class="spacer" style="padding: 5vh"></div>
 <article>
 
-    <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>Second-most common</span></h2>
+    <h2>Second-most common</h2>
 
     <div class="dropcap">
 
@@ -971,7 +994,7 @@ p {
 
     <p>In the 2019 legislative session, Sen. Greg Leding, a Democrat from Fayetteville, proposed a bill that would allow a judge to order a person’s guns taken away if that person is deemed a threat to themselves or others. The bill, which had Moms Demand’s support, failed in committee and was referred to study.</p>
 
-    <p>Seventeen states and Washington, D.C. have such laws, known as red flag or extreme risk protection order laws.</p>
+    <p>Seventeen states and Washington, D.C. have such laws, known as <a href="https://www.arkansasonline.com/guns/" target="_blank"><span class="badge badge-warning">red flag</span></a> or extreme risk protection order laws.</p>
 
     <p>Opponents in Arkansas have said such legislation infringes on due process and 2nd Amendment rights.</p>
 
@@ -983,12 +1006,17 @@ p {
 
   </article>
 
-  <div class="spacer" style="padding: 10vh"></div>
+  <div class="spacer" style="padding: 5vh"></div>
+  <div class="d-flex justify-content-center">
 
+  <img class="sectionbreak" src="break.svg" />
+
+</div>
+
+<div class="spacer" style="padding: 5vh"></div>
 
   <article>
-
-  <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"In that second"</span></h2>
+  <h2>"In that second"</h2>
 
   <div class="dropcap">
 
@@ -1000,7 +1028,7 @@ p {
 
   <p>While Owens was holding the weapon, the gun went off and a bullet hit Karma. She died a few days later.</p>
 
-  <p>Matthew and Karma were close. The two were laughing together over a video game in the moments before she was shot.</p>
+  <p><a href="https://www.arkansasonline.com/news/2017/jul/09/heart-and-soul-20170709/" target="_blank"><span class="badge badge-warning">Matthew and Karma</span></a> were close. The two were laughing together over a video game in the moments before she was shot.</p>
 
   <p>“In that second, there’s a hole in her forehead and her smile’s gone and I’m catching her,” Matthew said.</p>
 
@@ -1009,14 +1037,17 @@ p {
   <div class="d-flex justify-content-center">
   <img src="karma_1.jpg" class="img-fluid" alt="Responsive image">
 </div>
-<div class="d-flex justify-content-center">
+<div class="captions"><p>Brenda Wezowicz holds a photo of her granddaughter, Karma Wezowicz, as she sits in front of a garden dedicated to Karma. Karma was accidentally shot and died in March.</p></div>
 
+<div class="d-flex justify-content-center">
 <img src="karma_2.jpg" class="img-fluid" alt="Responsive image">
 </div>
+<div class="captions"><p>Brenda Wezowicz  has planted a garden dedicated to her granddaughter Karma Wezowicz, who was accidentally shot and died in March.</p></div>
+
 
 <div class="spacer" style="padding: 4vh"></div>
 
-  <p>Owens was sentenced to five years in prison — three years longer than the presumptive sentence for manslaughter — by Judge Robert Edwards of the 17th Judicial Circuit in August 2017. Owens had taken Valium and drunk two beers before he went over to the Wezowicz house that night, court testimony showed.</p>
+  <p>Owens was sentenced to <a href="https://www.arkansasonline.com/news/2017/jul/08/man-pleads-guilty-in-girl-s-death-20170/" target="_blank"><span class="badge badge-warning">five years in prison</span></a> — three years longer than the presumptive sentence for manslaughter — by Judge Robert Edwards of the 17th Judicial Circuit in August 2017. Owens had taken Valium and drunk two beers before he went over to the Wezowicz house that night, court testimony showed.</p>
 
   <p>Matthew thinks the sentence should have been longer. A mandatory 10-year sentence for people who accidentally kill anyone under the age of 12 would be a powerful deterrant, he said, and make people think twice before handling a weapon in a house with a child.</p>
 
@@ -1048,16 +1079,22 @@ p {
 
 </article>
 
-<div class="spacer" style="padding: 10vh"></div>
+<div class="spacer" style="padding: 5vh"></div>
+<div class="d-flex justify-content-center">
 
+<img class="sectionbreak" src="break.svg" />
+
+</div>
+
+<div class="spacer" style="padding: 5vh"></div>
 
 <article>
 
-<h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"Loaded and easily accessible"</span></h2>
+<h2>"Loaded and easily accessible"</h2>
 
 <div class="dropcap">
 
-<p>While adults have been prosecuted for accidentally shooting children, few instances of children accidentally shooting themselves have resulted in criminal prosecutions of the adults who owned the guns.</p>
+<p>While adults have been prosecuted for <a href="https://www.arkansasonline.com/news/2017/jul/09/6-children-killed-in-state-this-year-in/?f=news-arkansas" target="_blank"><span class="badge badge-warning">accidentally shooting children</span></a>, few instances of children accidentally shooting themselves have resulted in criminal prosecutions of the adults who owned the guns.</p>
 
 </div>
 
@@ -1075,6 +1112,21 @@ p {
 
 <p>Parents also rejected guns with triggers that require a fingerprint to fire because they wanted their children to have access to the weapons in case of break-ins, she said.</p>
 
+
+<div class="slideshow">
+    <div class="carousel">
+        <img src="scene_1.jpg" alt="Little Rock Police officers interview witnesses after a shooting involving a child on Friday, May 17, 2019, at the Westbridge Apartments in Little Rock." />
+        <img src="scene_2.jpg" alt="Little Rock Police Lt. Steve McClanahan talks Tuesday outside the Little Rock Police Department about the arrest of a suspect, Larry Jackson, in the killing of 2-year-old Ramiya Reed. Police are still seeking Deshaun Rushing in the case." />
+        <img src="scene_3.jpg" alt="Little Rock Police Department personnel investigate a shooting Tuesday afternoon near the intersection of 12th and Washington Streets. A 7-year-old was injured in the shooting, but police said the child's injuries do not appear to be life-threatening." />
+        <img src="scene_4.jpg" alt="North Little Rock Police investigate an early morning fatal shooting at Riverview Skateboard Park at 2800 River Road in North Little Rock, July 16, 2018. Police said officers found two people shot, one fatally and the other was transported to a local hospital." />
+        <img src="scene_5.jpg" alt="A child died at Arkansas Children's Hospital after being shot in the face outside this house at 3401 Lamar Street in Little Rock Wednesday evening" />
+
+    </div>
+    <p class="caption">&nbsp;</p>
+
+</div>
+
+
 <p>Congress froze funding for gun violence research in 1996, but late last year, voted to provide $12.5 million each to the CDC and the National Institutes of Health for such research.</p>
 
 <p>Researchers at Arkansas Children’s are going to collaborate with researchers in Tennessee and Alabama, which also are largely rural.</p>
@@ -1090,15 +1142,21 @@ p {
 
 </article>
 
-  <div class="spacer" style="padding: 10vh"></div>
+<div class="spacer" style="padding: 5vh"></div>
+<div class="d-flex justify-content-center">
 
+<img class="sectionbreak" src="break.svg" />
+
+</div>
+
+<div class="spacer" style="padding: 5vh"></div>
   <article>
 
-  <h2 class="subhead" data-aos="zoom-out" data-aos-offset="100" data-aos-duration="800"><span>"Guns are fatal"</span></h2>
+  <h2>"Guns are fatal"</h2>
 
   <div class="dropcap">
 
-  <p>Just over half the cases of suicide examined by the newspaper were by guns. Of 64 suicides, 34 were by gunshots. Suicide was also the most common way for a child to die by gunfire.</p>
+  <p>Just over half the cases of suicide examined by the newspaper were by guns. Of 64 suicides, 34 were by gunshots. Suicide was also <a href="https://www.arkansasonline.com/guns/1/" target="_blank"><span class="badge badge-warning">the most common way</span></a> for a child to die by gunfire.</p>
 
   </div>
 
@@ -1109,6 +1167,12 @@ p {
   <p>Guns are among the most lethal methods of suicide. Most firearms used in suicides of minors belong to the kids’ parents, according to research from the Means Matter Campaign at Harvard University.</p>
 
   <p>Securing guns and storing them separately from ammunition are among recommendations Arkansas Children’s health professionals make to parents of children who are discharging from the hospital after a suicide attempt, Mullins said.</p>
+
+  <div class="d-flex justify-content-center">
+
+<img class="cutout" src="cutout.jpg">
+
+</div>
 
   <p>Ladeana Bell, a licensed therapist and volunteer with the Arkansas chapter of the American Foundation for Suicide Prevention, said she makes the same recommendation to parents when she’s treating their children for suicidal ideations or depression.</p>
 
@@ -1276,17 +1340,34 @@ p {
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="//d3js.org/queue.v1.min.js"></script>
     <script src="//d3js.org/topojson.v1.min.js"></script>
-    <!-- <script src="d3-legend.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- <script src="map.js"></script> -->
-    <script src="linechart.js"></script>
+
 
 
     <script>
+    $(document).ready(function() {
 
+      // Find the initial scroll top when the page is loaded.
+      var initScrollTop = $(window).scrollTop();
+
+      // Set the image's vertical background position based on the scroll top when the page is loaded.
+      $(parallax1).css({'background-position-y' : (initScrollTop/75)+'%'});
+
+      // When the user scrolls...
+      $(window).scroll(function() {
+
+        // Find the new scroll top.
+        var scrollTop = $(window).scrollTop();
+
+        // Set the new background position.
+        $(parallax1).css({'background-position-y' : (scrollTop/75)+'%'});
+
+      });
+
+    });
 
 
     $(window).on("scroll", function() {
@@ -1298,9 +1379,21 @@ p {
     }
 });
 
+    var flkty = new Flickity( '.carousel', {  imagesLoaded: true,
+  percentPosition: false});
 
+    var caption = document.querySelector('.caption');
 
-    var flky = new Flickity( '.carousel', {});
+    flkty.on( 'select', function() {
+      // set image caption using img's alt
+      caption.textContent = flkty.selectedElement.alt;
+    });
+
+    // set initial caption
+    flkty.on( '.carousel', function() {
+      // set image caption using img's alt
+      caption.textContent = flkty.selectedElement.alt;
+    });
 
     AOS.init();
 
@@ -1317,15 +1410,16 @@ p {
       .offset([-5, 0])
       .html(function(d) {
         var dataRow = countryById.get(d.properties.name);
-           if (dataRow) {
+           if (dataRow.states == "Hawaii" || dataRow.states == "Rhode Island") {
                console.log(dataRow);
-               return dataRow.states + ": " + dataRow.rate + dataRow.deaths;
+               return "<p>" + dataRow.states + "</p>" + "Data are suppressed.";
            } else {
                console.log("no dataRow", d);
-               return dataRow.states + ": No data.";
+               return "<p>" + dataRow.states + "</p>" + "<b style='color:firebrick'>" + dataRow.deaths + "</b>" + " Deaths" + "<br></br>" + "<b style='color:firebrick'>" + dataRow.rate + "</b>" + " per 100,000" ;
            }
       })
 
+      d3.format('+%')(NaN)
 
     var svg2 = d3.select('#vis').append('svg')
         .attr("width", "80%")
