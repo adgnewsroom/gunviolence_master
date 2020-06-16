@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Gelasio|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio|Roboto:ital,wght@1,100;0,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -13,14 +13,13 @@
     <style>
 
 body {
- /* background-color:#cccccc; */
  overflow-x:hidden;
  overflow-y:scroll;
 }
 
-html {
+/* html {
   height: 100%;
-}
+} */
 
 .container1 {
 padding-top: 5vh;
@@ -65,35 +64,10 @@ padding-top: 5vh;
   /* margin-bottom: 10px; */
 }
 
-
-#chart svg{
-  /* max-width: 500px; */
-  /* height: 300px; */
-  margin: auto;
-  height: 90%;
-  /* padding-top: 5vh; */
-  /* margin-bottom: 10px; */
-}
-
-
   #toolbar {
     margin: auto;
     width: 400px;
   }
-
-
-  .list-group-item {
-    background-color: #E8B1B1;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-  }
-
-  .list-group {
-    margin: auto;
-    width: 525px;
-    padding-bottom: 5vh;
-  }
-
 
     .year {
       font-size: 18px;
@@ -200,7 +174,7 @@ padding-top: 5vh;
                     url("landing1.jpg");
 
   height: 100%;
-  filter: brightness(1.2);
+  filter: brightness(1.3);
   filter: blur(0.2px);
   background-position: 10% 80%;
   background-repeat: no-repeat;
@@ -219,7 +193,7 @@ padding-top: 5vh;
   align-items: center;
   justify-content: center;
   height: 84vh;
-  text-shadow: 3px 3px 0px black, 0 0 80px white;
+  text-shadow: 2px 2px 0px black, 0 0 100px white;
 }
 
 h1 {
@@ -248,25 +222,24 @@ h3 {
   text-align: left;
   max-width: 50vw;
   line-height: 38px;
+  font-weight: normal;
 }
 
 h4 {
-  /* color: #d1d1d1; */
   font-size: 1.8em;
-  /* text-shadow: 1px 1px 1px #000; */
-
-  /* -webkit-text-stroke-width: 0.3px;
-  -webkit-text-stroke-color: white; */
   text-align: center;
   padding-top: 30px;
   padding-bottom: 10px
 }
 
 h5 {
-  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4em;
   color: white;
   text-align: center;
-  padding-top: 30px
+  max-width: 50vw;
+  line-height: 38px;
+  padding-top: 20px;
 }
 
 h7 {
@@ -281,6 +254,15 @@ p {
   margin: auto;
   padding: 0 15px;
   margin-bottom: 1em;
+  font-family: 'Gelasio', serif;
+  font-size: 1.3em;
+}
+
+ul {
+  max-width: 710px;
+  margin: auto;
+  padding: 0 0 0 80px;
+  margin-bottom: 2em;
   font-family: 'Gelasio', serif;
   font-size: 1.3em;
 }
@@ -303,13 +285,32 @@ opacity: 0.8;
   font-family: 'Roboto', sans-serif;
   max-width: 40vw;
   font-size: 1.0em;
-  font-weight: 50;
+  font-weight: normal
 }
 
 .cardtitle p{
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+}
+
+.credit-list {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.0em;
+  font-weight: lighter;
+}
+
+.credit-header {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.0em;
+  margin: 0
+}
+
+.credits p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4em;
+  font-weight: normal;
   text-align: center;
 }
 
@@ -333,8 +334,9 @@ opacity: 0.8;
   margin: 0;
   padding: 10px;
   text-align: left;
-  padding-left: 20%;
-  min-width: 75%;
+  padding-left: 15%;
+  line-height: 20px;
+  min-width: 80%;
   display: block;
 }
 
@@ -346,9 +348,6 @@ opacity: 0.8;
     margin-right: 9px;
 }
 
-#topper{
-  background-color: black
-}
 
 .subintro {
   background: black;
@@ -368,6 +367,14 @@ opacity: 0.8;
     color: black;
 }
 
+.subintro ul{
+  color: white;
+  transition: all 1s ease-in-out;
+}
+
+.subintro.active ul{
+    color: black;
+}
 
 #vis {
   align-items: center;
@@ -376,8 +383,6 @@ opacity: 0.8;
   padding-top: 2vh;
   padding-left: 15vw;
 }
-
-
 
 .parallax-slide {
   height: 160vh;
@@ -390,6 +395,7 @@ opacity: 0.8;
 }
 
 #parallax1 {
+  height: 100%;
   background: url('collage.jpg') no-repeat center;
   background-attachment: fixed;
   background-size: cover;
@@ -401,11 +407,8 @@ opacity: 0.8;
   background-attachment: fixed;
   background-position: 50% 100%;
   background-size: cover;
+  /* background-size:100% auto; */
 }
-
-
-
-
 
 #bubble {
   align-items: center;
@@ -413,13 +416,6 @@ opacity: 0.8;
   display: block;
   padding-top: 1vh;
   padding-left: 38vw;
-}
-
-
-#chart {
-  /* padding-bottom: 1vh; */
-  padding-left: 3vw;
-  /* max-height: 90%; */
 }
 
 #share {
@@ -592,13 +588,9 @@ opacity: 0.8;
 }
 
 .img-fluid {
-  max-width: 45vw;
+  width: 45%;
+  height: auto;
   padding: 20 20 5 20;
-}
-
-.img-fluid1 {
-  max-width: 25vw;
-  padding: 10px;
 }
 
 .carousel img {
@@ -610,7 +602,7 @@ opacity: 0.8;
 }
 
 .slideshow img {
-  width: 60%;
+  width: 70%;
   padding-right:100px;
 
 }
@@ -636,18 +628,7 @@ opacity: 0.8;
 
 @media (max-width: 992px) {
 
-  .subhead span:before,
-  .subhead span:after {
-    width: 140px;
-  }
-
-  .list-group {
-    width: 465px;
-  }
-
 #vis {height: 50%;}
-
-#chart {height: 50%;}
 
 #bubble {
   padding-left: 8%;
@@ -699,14 +680,6 @@ opacity: 0.8;
   font-size: 10px
   }
 
-#chart .tooltiptext{
-  font-size: 5px
-}
-
-.subhead span:before,
-.subhead span:after {
-  width: 90px;
-}
 
 h4 {
   font-size: 1.0em;
@@ -714,10 +687,6 @@ h4 {
 
 h2 {
   font-size: 1.1em;
-}
-
-h5 {
-  font-size: 1.0em;
 }
 
 #share img {
@@ -737,12 +706,6 @@ h5 {
     text-align: center;
   }
 
-  .list-group {
-    margin: auto;
-    width: 415px;
-    padding-bottom: 5vh;
-  }
-
 #bubble {
   padding-left: 0
 }
@@ -760,17 +723,9 @@ p {
   width:380px;
   }
 
-  .subhead span:before,
-  .subhead span:after {
-    width: 70px;
-  }
 
   h4 {
     font-size: 0.9em;
-  }
-
-  h5 {
-    font-size: 0.8em;
   }
 
 }
@@ -781,7 +736,6 @@ p {
   <body>
 <div class="wrapper">
     <div class="subintro">
-    <section id="topper">
       <div id="logo"><a href="http://www.arkansasonline.com" target="_blank"><img alt="Arkansas Democrat-Gazette" src="https://s3.amazonaws.com/new_videos/year_in_pictures/logo.png" class="center"></a></div>
 
 
@@ -811,7 +765,6 @@ p {
       <div class="chevron"></div>
       <span class="text">Scroll down</span>
     </div>
-  </section>
 
 
 <div class="spacer" style="padding: 10vh;"></div>
@@ -841,7 +794,7 @@ p {
 
     <div class="container1">
 
-      <h4 style="color: #e6e6e6; text-shadow: 2px 2px 8px #000000;">Arkansas children died from gunshots from 2012 to 2017</h4>
+      <h4 style="color: #e6e6e6;">Arkansas children died from gunshots from 2012 to 2017</h4>
       <div id="toolbar">
         <a id="all" class="button active">All deaths</a>
         <a id="manner" class="button">By manner</a>
@@ -883,6 +836,15 @@ p {
 
     <p>Teenage boys constituted the largest group of those who died of gunshots, the newspaper’s data show.</p>
 
+    <p>The newspaper’s data on gun-related deaths also shows:
+      <ul>
+<li>34 were suicides.</li>
+<br><li>25 were ruled homicides.</li>
+<br><li>12 were deemed accidents. Some involved adults who unintentionally fired guns, but more often they were small children who accidentally shot themselves or other children while toying with guns.</li>
+<br><li>Four cases fell into a category between accident and homicide. They were prosecuted as manslaughter or negligent homicide. But investigators’ and coroners’ reports don’t indicate that they were the purposeful act of violence that constitutes other levels of homicide.</li>
+</ul>
+    <p>The means of death in six cases remain undetermined, records show.</p>
+
     <p>Curbing the rate of child deaths from guns poses challenges for health professionals and others who seek to prevent gun violence. Education is key, and steps such as gun locks and gun safes can work, experts say.</p>
 
     <p>But even when provided with gun locks, many parents won’t use them, according to research from nonprofits and interviews with local gun-violence-prevention advocates.</p>
@@ -893,7 +855,7 @@ p {
 
     <div class="spacer" style="padding: 2vh"></div>
 
-<h4 style="color: black; text-shadow: 2px 2px 8px #999999;">Children died from gunshots from 2012 to 2017</h4>
+<h4 style="color: black;">Children died from gunshots from 2012 to 2017</h4>
 
     <div id="vis"></div>
 
@@ -1209,6 +1171,41 @@ p {
     <p>She then conducted interviews with current and former investigators, family members, health specialists and experts in child abuse and neglect.</p>
     <p>Support for Monk’s reporting on this project also came from the Fund for Journalism on Child Well-Being, a program of the USC Annenberg Center for Health Journalism at the University of Southern California.</p>
   </div>
+    <div class="spacer" style="padding: 1vh"></div>
+    <hr style="width:50%">
+    <div class="spacer" style="padding: 1vh"></div>
+
+<div class="credits"><p>Credits</p></div>
+
+<div class="container">
+  <div class="row">
+<div class="col">
+<p class="credit-header">Reporter</p>
+<p class="credit-list">Ginny Monk</p>
+
+<p class="credit-header">Editor</p>
+<p class="credit-list">Sonny Albarado</p>
+
+<p class="credit-header">Designer</p>
+<p class="credit-list">Yutao Chen</p>
+
+<p class="credit-header">Developer</p>
+<p class="credit-list">Yutao Chen</p>
+
+</div>
+<div class="col">
+<p class="credit-header">Data visualizations</p>
+<p class="credit-list">Yutao Chen</p>
+
+<p class="credit-header">Graphic artists</p>
+<p class="credit-list">Aaron O’Quin, Carrie Hill</p>
+
+<p class="credit-header">Photographers</p>
+<p class="credit-list">Staton Breidenthal, Jeff Mitchell, Thomas Metthe</p>
+</div>
+</div>
+</div>
+
   </div>
   </div>
   </div>
@@ -1400,7 +1397,7 @@ p {
 
 
     $(window).on("scroll", function() {
-    if($(window).scrollTop() > 2300) {
+    if($(window).scrollTop() > 3500) {
         $(".subintro").addClass("active");
     } else {
         //remove the background property so it comes transparent again (defined in your css)
